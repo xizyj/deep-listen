@@ -1,0 +1,23 @@
+{
+  "name": "deep-listen",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/xizyj/deep-listen#readme",
+  "bugs": {
+    "url": "https://github.com/xizyj/deep-listen/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xizyj/deep-listen.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "start": "http-server -p 5173"
+  },
+  "dependencies": {
+    "http-server": "^14.1.1"
+  }
+}
