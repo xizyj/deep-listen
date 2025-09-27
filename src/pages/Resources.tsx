@@ -8,8 +8,8 @@ export default function Resources() {
     {
       id: "solution-docs",
       category: "方案资料",
-      title: "深聆智能语音交互解决方案白皮书",
-      description: "详细介绍深聆智能语音交互解决方案的技术原理、架构设计和应用场景",
+      title: "深聆科技语音交互解决方案白皮书",
+      description: "详细介绍深聆科技语音交互解决方案的技术原理、架构设计和应用场景",
       format: "PDF",
       size: "2.5 MB",
       date: "2025-01-15",
@@ -19,7 +19,7 @@ export default function Resources() {
       id: "product-manual",
       category: "产品资料",
       title: "语音遥控器用户手册",
-      description: "深聆智能语音遥控器的安装、配置和使用指南",
+      description: "深聆科技语音遥控器的安装、配置和使用指南",
       format: "PDF",
       size: "1.2 MB",
       date: "2025-02-20",
@@ -29,7 +29,7 @@ export default function Resources() {
       id: "api-docs",
       category: "开发资料",
       title: "语音识别API接口文档",
-      description: "深聆智能语音识别API接口的详细说明和调用示例",
+      description: "深聆科技语音识别API接口的详细说明和调用示例",
       format: "ZIP",
       size: "3.8 MB",
       date: "2025-03-10",
@@ -39,7 +39,7 @@ export default function Resources() {
       id: "sdk-docs",
       category: "开发资料",
       title: "语音交互SDK开发指南",
-      description: "深聆智能语音交互SDK的集成文档和开发示例",
+      description: "深聆科技语音交互SDK的集成文档和开发示例",
       format: "PDF",
       size: "2.1 MB",
       date: "2025-03-25",
@@ -49,7 +49,7 @@ export default function Resources() {
       id: "case-study",
       category: "案例研究",
       title: "智能家居语音交互解决方案案例研究",
-      description: "深聆智能语音交互解决方案在智能家居领域的应用案例分析",
+      description: "深聆科技语音交互解决方案在智能家居领域的应用案例分析",
       format: "PDF",
       size: "4.2 MB",
       date: "2025-04-05",
@@ -59,7 +59,7 @@ export default function Resources() {
       id: "technical-spec",
       category: "产品资料",
       title: "智能语音模块技术规格书",
-      description: "深聆智能语音模块的详细技术参数和规格说明",
+      description: "深聆科技语音模块的详细技术参数和规格说明",
       format: "PDF",
       size: "1.8 MB",
       date: "2025-04-20",
@@ -105,7 +105,7 @@ export default function Resources() {
         <div className="container mx-auto px-4">
           <h1 className="text-4xl font-bold mb-4">资源中心</h1>
           <p className="text-lg text-blue-100 max-w-3xl">
-            提供深聆智能解决方案和产品的相关资料、技术文档、案例研究和开发资源
+            提供深聆科技解决方案和产品的相关资料、技术文档、案例研究和开发资源
           </p>
         </div>
       </section>
@@ -128,7 +128,7 @@ export default function Resources() {
             },
             {
               title: "样机申购",
-              description: "申请深聆智能产品样机进行测试和评估",
+              description: "申请深聆科技产品样机进行测试和评估",
               icon: "fa-box-open",
               link: "/resources/sample"
             },
@@ -164,7 +164,7 @@ export default function Resources() {
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-10">
           <div>
             <h2 className="text-3xl font-bold text-gray-900 mb-2">资料下载</h2>
-            <p className="text-gray-600">获取深聆智能解决方案和产品的相关资料</p>
+            <p className="text-gray-600">获取深聆科技解决方案和产品的相关资料</p>
           </div>
           <Link 
             to="/resources/download"

@@ -122,12 +122,12 @@ export default function Solutions() {
                   ))}
                 </ul>
                 
-                <Link 
+                {/* <Link 
                   to={`/solutions/${solution.id}`}
                   className="inline-flex items-center bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-md transition-colors"
                 >
                   了解详情 <i className="fa-solid fa-arrow-right ml-2"></i>
-                </Link>
+                </Link> */}
               </div>
             </div>
           </div>

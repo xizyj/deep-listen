@@ -91,7 +91,7 @@ export default function About() {
           <div className="md:w-1/2">
             <h2 className="text-3xl font-bold text-gray-900 mb-6">公司简介</h2>
             <p className="text-gray-700 mb-4 leading-relaxed">
-              浙江深聆智能科技有限公司成立于2022年，是一家专注于智能语音交互技术研发与应用的高科技企业。公司核心团队来自阿里巴巴、百度、腾讯等知名科技企业，拥有丰富的人工智能和语音识别领域研发经验。
+              浙江深聆智能科技有限公司成立于2021年，是一家专注于智能语音交互技术研发与应用的高科技企业。公司核心团队来自阿里巴巴、百度、腾讯等知名科技企业，拥有丰富的人工智能和语音识别领域研发经验。
             </p>
             <p className="text-gray-700 mb-4 leading-relaxed">
               深聆智能致力于通过纯软件升级或硬件模块集成的方式，为传统设备赋能智能化语音识别交互能力，帮助客户快速实现产品智能化升级。公司产品和解决方案已广泛应用于智能家居、工业控制、消费电子等多个领域。
@@ -103,7 +103,7 @@ export default function About() {
           
           <div className="md:w-1/2">
             <img 
-              src="https://space.coze.cn/api/coze_space/gen_image?image_size=landscape_4_3&prompt=Modern%20tech%20company%20office%20team&sign=e780b152157fdeb37eb5160f185b844d" 
+              src="/img/introduction.png" 
               alt="深聆智能团队" 
               className="rounded-xl shadow-lg w-full h-auto"
             />
@@ -112,12 +112,11 @@ export default function About() {
       </section>
       
       {/* 发展历程 */}
-      <section className="bg-gray-50 py-20 mb-20">
+      {/* <section className="bg-gray-50 py-20 mb-20">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-gray-900 mb-12 text-center">发展历程</h2>
           
           <div className="relative max-w-4xl mx-auto">
-            {/* 时间线中轴线 */}
             <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-blue-200"></div>
             
             <div className="space-y-16 relative">
@@ -128,7 +127,6 @@ export default function About() {
                     <p className="text-gray-600">{item.event}</p>
                   </div>
                   
-                  {/* 时间线节点 */}
                   <div className="z-10 w-12 h-12 rounded-full bg-blue-600 flex items-center justify-center text-white font-bold">
                     {index + 1}
                   </div>
@@ -139,10 +137,10 @@ export default function About() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
       
       {/* 核心团队 */}
-      <section className="container mx-auto px-4 mb-20">
+      {/* <section className="container mx-auto px-4 mb-20">
         <h2 className="text-3xl font-bold text-gray-900 mb-4 text-center">核心团队</h2>
         <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-12 text-center">
           深聆智能拥有一支经验丰富的核心团队，在人工智能和语音识别领域拥有深厚的技术积累
@@ -166,7 +164,7 @@ export default function About() {
             </div>
           ))}
         </div>
-      </section>
+      </section> */}
       
       {/* 企业文化 */}
       <section className="bg-gray-50 py-20 mb-20">
@@ -212,7 +210,7 @@ export default function About() {
       </section>
       
       {/* 新闻动态 */}
-      <section className="container mx-auto px-4 mb-20">
+      {/* <section className="container mx-auto px-4 mb-20">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-10">
           <div>
             <h2 className="text-3xl font-bold text-gray-900 mb-2">新闻动态</h2>
@@ -250,7 +248,7 @@ export default function About() {
             </div>
           ))}
         </div>
-      </section>
+      </section> */}
       
       {/* 联系我们 */}
       <section className="bg-blue-600 text-white py-20">

@@ -1,8 +1,8 @@
 export const websiteData = {
   // 网站基本信息
   siteInfo: {
-    title: "深聆智能 - 智能语音交互解决方案领导者",
-    description: "深聆智能专注于为传统设备赋能智能化语音识别交互能力，提供软件算法方案、智能硬件方案和设备云平台方案。",
+    title: "深聆科技 - 智能语音交互解决方案领导者",
+    description: "深聆科技专注于为传统设备赋能智能化语音识别交互能力，提供软件算法方案、智能硬件方案和设备云平台方案。",
     keywords: "智能语音, 语音识别, 交互方案, 智能硬件, 云平台"
   },
   
@@ -72,15 +72,15 @@ export const websiteData = {
   home: {
     hero: {
       title: "赋能传统设备<br />智能化语音交互",
-      subtitle: "深聆智能提供领先的语音识别与交互解决方案，让您的产品拥有智能语音交互能力",
+      subtitle: "深聆科技提供领先的语音识别与交互解决方案，让您的产品拥有智能语音交互能力",
       ctaText: "了解解决方案",
       ctaLink: "/solutions",
       imageUrl: "https://space.coze.cn/api/coze_space/gen_image?image_size=landscape_16_9&prompt=Smart%20voice%20interaction%20technology%20concept%20illustration%2C%20modern%20tech%20style&sign=5c6827ac1a6a4042c744f0212bea283c"
     },
     
     about: {
-      title: "关于深聆智能",
-      content: "浙江深聆智能科技有限公司是一家专注于智能语音交互技术研发与应用的高科技企业。我们致力于通过纯软件升级或硬件模块集成的方式，为传统设备赋能智能化语音识别交互能力，帮助客户快速实现产品智能化升级。",
+      title: "关于深聆科技",
+      content: "浙江深聆科技科技有限公司是一家专注于智能语音交互技术研发与应用的高科技企业。我们致力于通过纯软件升级或硬件模块集成的方式，为传统设备赋能智能化语音识别交互能力，帮助客户快速实现产品智能化升级。",
       imageUrl: "https://space.coze.cn/api/coze_space/gen_image?image_size=landscape_4_3&prompt=Modern%20tech%20company%20office%20environment%2C%20professional%20team%20working&sign=d9d61d9bb2981a9d00a725d07ae5f055"
     },
     
@@ -161,17 +161,17 @@ export const websiteData = {
     
     testimonials: [
       {
-        quote: "深聆智能的语音解决方案帮助我们的家电产品快速实现了智能化升级，用户反馈非常好。",
+        quote: "深聆科技的语音解决方案帮助我们的家电产品快速实现了智能化升级，用户反馈非常好。",
         author: "张总",
         company: "某知名家电企业"
       },
       {
-        quote: "集成深聆智能的语音模块后，我们的工业设备操作更加便捷，大大提高了工作效率。",
+        quote: "集成深聆科技的语音模块后，我们的工业设备操作更加便捷，大大提高了工作效率。",
         author: "李工",
         company: "某工业自动化公司"
       },
       {
-        quote: "深聆智能的技术团队响应迅速，解决方案稳定可靠，是我们值得信赖的合作伙伴。",
+        quote: "深聆科技的技术团队响应迅速，解决方案稳定可靠，是我们值得信赖的合作伙伴。",
         author: "王经理",
         company: "某消费电子品牌"
       }

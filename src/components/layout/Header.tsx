@@ -42,7 +42,7 @@ const NavMenu = () => {
               <span className="text-white font-bold text-xl">DL</span>
             </div> */}
               <img className='h-10' src="/img/logo.png" alt="" />
-            <span className={`text-xl font-bold text-gray-700 hidden sm:block`}>深聆智能</span>
+            <span className={`text-xl font-bold text-gray-700 hidden sm:block`}>深聆科技</span>
           </Link>
 
           {/* 桌面导航 */}

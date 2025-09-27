@@ -107,7 +107,7 @@ export default function Contact() {
       {/* 联系表单和地图 */}
       <section className="container mx-auto px-4 mb-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          <div className="bg-white rounded-xl shadow-lg p-8">
+          {/* <div className="bg-white rounded-xl shadow-lg p-8">
             <h2 className="text-2xl font-bold text-gray-900 mb-6">发送消息</h2>
             <form onSubmit={handleSubmit}>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
@@ -214,7 +214,7 @@ export default function Contact() {
                 {isSubmitting ? '发送中...' : '发送消息'}
               </button>
             </form>
-          </div>
+          </div> */}
           
           <div>
             <div className="bg-white rounded-xl shadow-lg overflow-hidden h-full">
@@ -244,7 +244,7 @@ export default function Contact() {
       </section>
       
       {/* 合作伙伴 */}
-      <section className="bg-gray-50 py-20">
+      {/* <section className="bg-gray-50 py-20">
         <div className="container mx-auto px-4">
           <h2 className="text-2xl font-bold text-gray-900 mb-2 text-center">合作伙伴</h2>
           <p className="text-gray-600 mb-12 text-center">深聆智能与众多行业领先企业建立了战略合作关系</p>
@@ -259,7 +259,7 @@ export default function Contact() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
     </Layout>
   );
 }

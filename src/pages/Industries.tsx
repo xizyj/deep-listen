@@ -65,7 +65,7 @@ export default function Industries() {
         <div className="container mx-auto px-4">
           <h1 className="text-4xl font-bold mb-4">行业应用</h1>
           <p className="text-lg text-blue-100 max-w-3xl">
-            深聆智能解决方案已广泛应用于多个行业领域，为不同行业客户提供专业的语音交互解决方案
+            深聆科技解决方案已广泛应用于多个行业领域，为不同行业客户提供专业的语音交互解决方案
           </p>
         </div>
       </section>
@@ -119,7 +119,7 @@ export default function Industries() {
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-gray-900 mb-4 text-center">成功案例</h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-12 text-center">
-            深聆智能已为众多行业客户提供成功的语音交互解决方案
+            深聆科技已为众多行业客户提供成功的语音交互解决方案
           </p>
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
@@ -168,7 +168,7 @@ export default function Industries() {
       <section className="container mx-auto px-4 mb-20">
         <h2 className="text-3xl font-bold text-gray-900 mb-4 text-center">为行业创造价值</h2>
         <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-12 text-center">
-          深聆智能解决方案为不同行业客户带来显著价值提升
+          深聆科技解决方案为不同行业客户带来显著价值提升
         </p>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">

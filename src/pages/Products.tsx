@@ -85,12 +85,12 @@ export default function Products() {
                   ))}
                 </ul>
                 
-                <Link 
+                {/* <Link 
                   to={`/products/${product.id}`}
                   className="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium"
                 >
                   查看详情 <i className="fa-solid fa-arrow-right ml-2"></i>
-                </Link>
+                </Link> */}
               </div>
             </div>
           ))}

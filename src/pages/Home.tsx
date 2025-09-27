@@ -44,7 +44,7 @@ export default function Home() {
               <div className="relative">
                 <div className="absolute -inset-4 bg-gradient-to-t from-blue-400 to-purple-500 rounded-lg blur opacity-30 animate-blob"></div>
                 <img 
-                  src={hero.imageUrl} 
+                  src='/img/main.png' 
                   alt="智能语音交互技术" 
                   className="relative z-10 rounded-lg shadow-2xl w-full h-auto object-cover"
                 />
@@ -62,7 +62,7 @@ export default function Home() {
           <div className="flex flex-col md:flex-row items-center gap-12">
             <div className="md:w-1/2">
               <img 
-                src={about.imageUrl} 
+                src='/img/about.jpg' 
                 alt="关于深聆智能" 
                 className="rounded-xl shadow-xl w-full h-auto object-cover"
               />
@@ -157,14 +157,14 @@ export default function Home() {
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
-                    <div className="p-6">
+                    {/* <div className="p-6">
                       <Link 
                         to={solution.link}
                         className="text-white font-medium inline-flex items-center"
                       >
                         查看详情 <i className="fa-solid fa-arrow-right ml-2"></i>
                       </Link>
-                    </div>
+                    </div> */}
                   </div>
                 </div>
                 
