@@ -1,0 +1,342 @@
+/* 轮播图样式 */
+.carousel {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.carousel-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.carousel-item {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.carousel-item.animating {
+  opacity: 0.5;
+}
+
+/* Layered slides */
+.carousel-slides {
+  position: absolute;
+  inset: 0;
+}
+
+.carousel-slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0;
+  transform: scale(1.02);
+  will-change: transform, opacity;
+}
+
+.carousel-slide::before { /* gradient overlay */
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(120% 120% at 80% 20%, rgba(0, 102, 204, 0.25) 0%, rgba(0,0,0,0.0) 40%) ,
+              linear-gradient(180deg, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0.55) 100%);
+  pointer-events: none;
+}
+
+.carousel-slide.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.carousel-slide.prev,
+.carousel-slide.next {
+  opacity: 0;
+}
+
+/* Ken Burns effect on background */
+.carousel-slide.active .kenburns {
+  position: absolute;
+  inset: 0;
+  background-size: 110% 110%;
+  background-position: center;
+  animation: kenburnsZoom 7s ease-in-out forwards;
+}
+
+@keyframes kenburnsZoom {
+  0%   { transform: scale(1) translateZ(0); }
+  100% { transform: scale(1.08) translateZ(0); }
+}
+
+/* 轮播图内容 */
+.carousel-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.25);
+}
+
+.carousel-text {
+  text-align: center;
+  color: white;
+  max-width: 800px;
+  padding: 0 20px;
+  transform: translateY(20px);
+  opacity: 0;
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.carousel-text.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Staggered text animation */
+.carousel-title,
+.carousel-subtitle,
+.carousel-description,
+.carousel-button {
+  opacity: 0;
+  transform: translateY(12px);
+}
+
+.carousel-text.fade-in .carousel-title { animation: textUp 0.6s ease forwards 0.05s; }
+.carousel-text.fade-in .carousel-subtitle { animation: textUp 0.6s ease forwards 0.2s; }
+.carousel-text.fade-in .carousel-description { animation: textUp 0.6s ease forwards 0.35s; }
+.carousel-text.fade-in .carousel-button { animation: textUp 0.6s ease forwards 0.5s; }
+
+@keyframes textUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.carousel-title {
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
+  color: white;
+}
+
+.carousel-subtitle {
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 30px;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
+  color: white;
+}
+
+.carousel-description {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 40px;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
+  color: white;
+}
+
+.carousel-button {
+  font-size: 16px;
+  font-weight: 600;
+  padding: 12px 30px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255,255,255,0.5);
+  backdrop-filter: blur(2px);
+  background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02));
+}
+
+.carousel-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* 轮播图控制按钮 */
+.carousel-control {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: white;
+  font-size: 36px;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 10;
+  line-height: 1;
+  text-align: center;
+  padding: 0;
+}
+
+.carousel-control:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-control-prev {
+  left: 20px;
+}
+
+.carousel-control-next {
+  right: 20px;
+}
+
+.carousel-control-icon {
+  display: inline-flex;
+  width: 24px;
+  height: 24px;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  font-weight: bold;
+  padding-bottom: 4px;
+  padding-left: 4px;
+}
+
+/* 轮播图指示器 */
+.carousel-indicators {
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  z-index: 10;
+}
+
+.carousel-indicator {
+  width: 12px;
+  height: 4px;
+  padding:0;
+  border-radius: 2px;
+  border: none;
+  background: rgba(255, 255, 255, 0.6);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.carousel-indicator:hover {
+  background: rgba(255, 255, 255, 0.9);
+  transform: scaleY(1.2);
+}
+
+.carousel-indicator.active {
+  width: 28px;
+  background: white;
+}
+
+
+@keyframes progressAnim {
+  from { width: 0%; }
+  to   { width: 100%; }
+}
+
+/* 响应式设计 */
+@media (max-width: 992px) {
+  .carousel-title {
+    font-size: 36px;
+  }
+  
+  .carousel-subtitle {
+    font-size: 20px;
+  }
+  
+  .carousel-description {
+    font-size: 16px;
+  }
+  
+  .carousel-control {
+    font-size: 24px;
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .carousel {
+    height: 80vh;
+  }
+  
+  .carousel-title {
+    font-size: 28px;
+  }
+  
+  .carousel-subtitle {
+    font-size: 18px;
+  }
+  
+  .carousel-description {
+    font-size: 14px;
+    margin-bottom: 30px;
+  }
+  
+  .carousel-button {
+    font-size: 14px;
+    padding: 10px 20px;
+  }
+  
+  .carousel-control {
+    font-size: 20px;
+    width: 35px;
+    height: 35px;
+  }
+  
+  .carousel-control-prev {
+    left: 10px;
+  }
+  
+  .carousel-control-next {
+    right: 10px;
+  }
+  
+  .carousel-indicators {
+    bottom: 15px;
+    gap: 10px;
+  }
+  .carousel-indicator {
+    width: 10px;
+    height: 3px;
+  }
+  .carousel-indicator.active {
+    width: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel {
+    height: 70vh;
+  }
+  
+  .carousel-title {
+    font-size: 24px;
+    margin-bottom: 15px;
+  }
+  
+  .carousel-subtitle {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+  
+  .carousel-description {
+    font-size: 13px;
+    margin-bottom: 25px;
+  }
+}

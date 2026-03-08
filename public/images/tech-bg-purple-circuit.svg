@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080">
+  <defs>
+    <linearGradient id="bg-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2d1b69" />
+      <stop offset="100%" stop-color="#7e22ce" />
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="10" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+  
+  <!-- 背景 -->
+  <rect width="1920" height="1080" fill="url(#bg-gradient)" />
+  
+  <!-- 电路图案 -->
+  <g stroke="#a78bfa" stroke-width="1" opacity="0.3">
+    <!-- 主电路线 -->
+    <path d="M100,100 H1800" stroke-width="2" />
+    <path d="M100,980 H1800" stroke-width="2" />
+    <path d="M100,100 V980" stroke-width="2" />
+    <path d="M1800,100 V980" stroke-width="2" />
+    
+    <!-- 交叉电路 -->
+    <path d="M300,300 H1600" />
+    <path d="M600,600 H1300" />
+    <path d="M300,300 V700" />
+    <path d="M600,300 V900" />
+    <path d="M900,100 V900" />
+    <path d="M1200,300 V900" />
+    <path d="M1500,300 V700" />
+    
+    <!-- 节点 -->
+    <circle cx="300" cy="300" r="5" fill="#c4b5fd" />
+    <circle cx="600" cy="300" r="5" fill="#c4b5fd" />
+    <circle cx="900" cy="300" r="5" fill="#c4b5fd" />
+    <circle cx="1200" cy="300" r="5" fill="#c4b5fd" />
+    <circle cx="1500" cy="300" r="5" fill="#c4b5fd" />
+    
+    <circle cx="300" cy="600" r="5" fill="#c4b5fd" />
+    <circle cx="600" cy="600" r="5" fill="#c4b5fd" />
+    <circle cx="900" cy="600" r="5" fill="#c4b5fd" />
+    <circle cx="1200" cy="600" r="5" fill="#c4b5fd" />
+    <circle cx="1500" cy="600" r="5" fill="#c4b5fd" />
+    
+    <circle cx="300" cy="900" r="5" fill="#c4b5fd" />
+    <circle cx="600" cy="900" r="5" fill="#c4b5fd" />
+    <circle cx="900" cy="900" r="5" fill="#c4b5fd" />
+    <circle cx="1200" cy="900" r="5" fill="#c4b5fd" />
+    <circle cx="1500" cy="900" r="5" fill="#c4b5fd" />
+  </g>
+  
+  <!-- 中央科技元素 -->
+  <g transform="translate(960, 540)" filter="url(#glow)">
+    <rect x="-100" y="-100" width="200" height="200" fill="none" stroke="#c084fc" stroke-width="3" rx="20" />
+    
+    <!-- 电路板图案 -->
+    <path d="M-80,-80 H80" stroke="#e9d5ff" stroke-width="2" />
+    <path d="M-80,-40 H80" stroke="#e9d5ff" stroke-width="2" />
+    <path d="M-80,0 H80" stroke="#e9d5ff" stroke-width="2" />
+    <path d="M-80,40 H80" stroke="#e9d5ff" stroke-width="2" />
+    <path d="M-80,80 H80" stroke="#e9d5ff" stroke-width="2" />
+    
+    <path d="M-80,-80 V80" stroke="#e9d5ff" stroke-width="2" />
+    <path d="M-40,-80 V80" stroke="#e9d5ff" stroke-width="2" />
+    <path d="M0,-80 V80" stroke="#e9d5ff" stroke-width="2" />
+    <path d="M40,-80 V80" stroke="#e9d5ff" stroke-width="2" />
+    <path d="M80,-80 V80" stroke="#e9d5ff" stroke-width="2" />
+    
+    <!-- 中心芯片 -->
+    <circle cx="0" cy="0" r="30" fill="#7e22ce" stroke="#a78bfa" stroke-width="2" />
+    <circle cx="0" cy="0" r="20" fill="#6d28d9" stroke="#c4b5fd" stroke-width="1" />
+  </g>
+</svg>

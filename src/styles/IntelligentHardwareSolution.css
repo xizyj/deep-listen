@@ -1,0 +1,190 @@
+/* 智能硬件方案页面样式 */
+.intelligent-hardware-page {
+}
+
+/* 产品系列 */
+.products-content {
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.products-content.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+.product-item {
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.product-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.product-image {
+  height: 200px;
+  overflow: hidden;
+}
+
+.product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.product-item:hover .product-image img {
+  transform: scale(1.05);
+}
+
+.product-text {
+  padding: 20px;
+}
+
+.product-text h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.product-text p {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.6;
+}
+
+/* 淡入区块 */
+.fade-in-section {
+  opacity: 0; /* 初始状态透明 */
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-in-section.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 按钮样式 */
+.btn {
+  display: inline-block;
+  padding: 12px 30px;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+}
+
+.btn-primary {
+  background-color: #0066cc;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #0052a3;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 102, 204, 0.3);
+}
+
+/* 响应式设计 */
+@media (max-width: 992px) {
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  /* 标签页导航调整 */
+  .solution-tabs {
+    flex-wrap: wrap;
+  }
+  
+  .tab-button {
+    flex: 1 1 33%;
+  }
+}
+
+@media (max-width: 768px) {
+  .products-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .tab-button {
+    flex: 1 1 50%;
+  }
+}
+
+@media (max-width: 480px) {
+  .tab-button {
+    flex: 1 1 100%;
+  }
+}
+
+/* 加载动画 */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 表格滚动优化 */
+.technical-table {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* 悬停效果优化 */
+.product-item, .application-item, .benefit-item {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.product-item:hover, .application-item:hover, .benefit-item:hover {
+  transform: translateY(-5px);
+}
+
+/* 标签页切换动画 */
+.tab-content > div {
+  animation: fadeIn 0.5s ease-out;
+}
+
+/* 图片悬停效果增强 */
+.feature-image img, .application-image img, .product-image img {
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.feature-image:hover img, .application-image:hover img, .product-image:hover img {
+  transform: scale(1.05);
+}
+
+/* 下载链接悬停效果 */
+.download-link {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.download-link:hover {
+  transform: translateY(-3px);
+}
+
+/* 表格行悬停效果 */
+.technical-table tr:hover {
+  background-color: #e3f2fd !important;
+  transition: background-color 0.3s ease;
+}

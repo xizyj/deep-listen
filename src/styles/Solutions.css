@@ -1,0 +1,402 @@
+/* 解决方案页面样式 */
+.solutions-page {
+}
+
+/* 页面标题 */
+.page-header {
+  padding: 120px 0 60px;
+  background: linear-gradient(135deg, #0066cc 0%, #0099ff 100%);
+  color: white;
+  text-align: center;
+}
+
+.page-header h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.page-header p {
+  font-size: 18px;
+  max-width: 700px;
+  margin: 0 auto;
+  opacity: 0.9;
+  color: white;
+}
+
+/* 解决方案列表 */
+.solutions-list {
+  padding: 80px 0;
+  background-color: white;
+}
+
+.solutions-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+.solution-card {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.solution-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.solution-card:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.solution-card-image {
+  flex: 1;
+  min-height: 300px;
+  overflow: hidden;
+}
+
+.solution-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.solution-card:hover .solution-img {
+  transform: scale(1.05);
+}
+
+.solution-card-content {
+  flex: 1;
+  padding: 40px;
+}
+
+.solution-card-content h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.solution-card-content p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #666;
+  margin-bottom: 30px;
+}
+
+.solution-features {
+  margin-bottom: 30px;
+}
+
+.feature-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.feature-item span {
+  font-size: 14px;
+  color: #333;
+}
+
+/* 行业案例 */
+.industry-cases {
+  padding: 80px 0;
+  background-color: #f0f7ff;
+}
+
+.section-title {
+  font-size: 36px;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.section-subtitle {
+  font-size: 16px;
+  text-align: center;
+  color: #666;
+  margin-bottom: 60px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cases-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+.case-item {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  height: 400px;
+}
+
+.case-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.case-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.8) 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 18px;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.case-item:hover .case-overlay {
+  background: linear-gradient(180deg, rgba(0,102,204,0.2) 0%, rgba(0,102,204,0.9) 100%);
+}
+
+.case-item:hover .case-image {
+  transform: scale(1.05);
+}
+
+.case-overlay h3 {
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+.case-overlay p {
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+/* 咨询支持 */
+.consultation {
+  padding: 80px 0;
+  background-color: #0066cc;
+  color: white;
+}
+
+.consultation-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.consultation-text h2 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.consultation-text p {
+  font-size: 16px;
+  opacity: 0.9;
+}
+
+.consultation-button .btn {
+  font-size: 16px;
+  padding: 12px 30px;
+  background-color: white;
+  color: #0066cc;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.consultation-button .btn:hover {
+  background-color: #f0f0f0;
+  transform: translateY(-3px);
+}
+
+/* 页脚样式 */
+.footer {
+  background-color: #333;
+  color: white;
+  padding: 80px 0 40px;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+  margin-bottom: 60px;
+}
+
+.footer-column h3 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.footer-column h4 {
+  font-size: 18px;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.footer-column p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #ccc;
+  margin-bottom: 20px;
+}
+
+.footer-links {
+  list-style: none;
+}
+
+.footer-links li {
+  margin-bottom: 12px;
+}
+
+.footer-links a {
+  font-size: 14px;
+  color: #ccc;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: white;
+}
+
+.footer-contact {
+  list-style: none;
+}
+
+.footer-contact li {
+  font-size: 14px;
+  color: #ccc;
+  margin-bottom: 12px;
+  line-height: 1.6;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 30px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-bottom p {
+  font-size: 14px;
+  color: #999;
+  margin: 0;
+}
+
+/* 响应式设计 */
+@media (max-width: 992px) {
+  .page-header h1 {
+    font-size: 36px;
+  }
+  
+  .page-header p {
+    font-size: 16px;
+  }
+  
+  .solution-card,
+  .solution-card:nth-child(even) {
+    flex-direction: column;
+  }
+  
+  .solution-card-image {
+    width: 100%;
+    min-height: 200px;
+  }
+  
+  .case-item {
+    height: 320px;
+  }
+  
+  .cases-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .consultation-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .footer-content {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .page-header {
+    padding: 100px 0 50px;
+  }
+  
+  .page-header h1 {
+    font-size: 28px;
+  }
+  
+  .solutions-list,
+  .industry-cases,
+  .consultation {
+    padding: 60px 0;
+  }
+  
+  .section-title {
+    font-size: 28px;
+  }
+  
+  .section-subtitle {
+    font-size: 14px;
+    margin-bottom: 40px;
+  }
+  
+  .solution-card-content {
+    padding: 30px 20px;
+  }
+  
+  .solution-card-content h2 {
+    font-size: 24px;
+  }
+  
+  .case-item {
+    height: 180px;
+  }
+  
+  .cases-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  
+  .footer {
+    padding: 60px 0 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-header h1 {
+    font-size: 24px;
+  }
+  
+  .solution-card-content h2 {
+    font-size: 20px;
+  }
+  
+  .case-overlay h3 {
+    font-size: 18px;
+  }
+  
+  .consultation-text h2 {
+    font-size: 24px;
+  }
+}

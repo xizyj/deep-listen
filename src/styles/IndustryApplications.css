@@ -1,0 +1,799 @@
+/* 行业应用页面样式 */
+.industry-applications-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  color: #333;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+}
+
+/* 页面标题 */
+.page-header {
+  background: linear-gradient(135deg, #4a6fa5, #5e83ba, #3a5a88);
+  color: white;
+  padding: 80px 0 60px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.page-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 60%);
+}
+
+.page-header .container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.page-header h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  line-height: 1.2;
+}
+
+.page-header p {
+  font-size: 1.25rem;
+  max-width: 800px;
+  margin: 0 auto;
+  opacity: 0.95;
+  line-height: 1.6;
+}
+
+/* 主要内容 */
+.applications-content {
+  flex: 1;
+  padding: 60px 0;
+  background-color: #f8f9fa;
+}
+
+.applications-content .container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* 行业导航 */
+.industry-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 50px;
+  justify-content: center;
+  padding: 20px;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+}
+
+.industry-link {
+  padding: 12px 24px;
+  background-color: #f8f9fa;
+  color: #3a5a88;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+  text-align: center;
+  min-width: 140px;
+}
+
+.industry-link:hover,
+.industry-link.active {
+  background-color: #3a5a88;
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(58, 90, 136, 0.3);
+}
+
+/* 行业应用区块 */
+.industry-section {
+  margin-bottom: 80px;
+  background-color: white;
+  border-radius: 16px;
+  padding: 50px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.industry-section:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.industry-section h2 {
+  font-size: 2.4rem;
+  color: #3a5a88;
+  margin-bottom: 24px;
+  font-weight: 700;
+  position: relative;
+  padding-bottom: 16px;
+  text-align: center;
+}
+
+.industry-section h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 5px;
+  background: linear-gradient(90deg, #4a6fa5, #5e83ba);
+  border-radius: 3px;
+}
+
+.industry-description {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #666;
+  margin-bottom: 30px;
+}
+
+/* 行业特性 */
+.industry-features {
+  margin-bottom: 50px;
+}
+
+.industry-features h3 {
+  font-size: 1.8rem;
+  color: #4a6fa5;
+  margin-bottom: 28px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.feature-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 16px;
+  padding: 24px;
+  background-color: #f8f9fa;
+  border-radius: 12px;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+  min-height: 140px;
+  justify-content: center;
+}
+
+.feature-item:hover {
+  transform: translateY(-6px);
+  border-color: #4a6fa5;
+  box-shadow: 0 6px 16px rgba(74, 111, 165, 0.15);
+}
+
+.feature-icon {
+  width: 56px;
+  height: 56px;
+  background: linear-gradient(135deg, #4a6fa5, #5e83ba);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(74, 111, 165, 0.2);
+}
+
+.feature-item span {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #333;
+  line-height: 1.5;
+}
+
+/* 行业案例 */
+.industry-cases h3 {
+  font-size: 1.8rem;
+  color: #4a6fa5;
+  margin-bottom: 28px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.cases-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+}
+
+.case-item {
+  background-color: white;
+  border-radius: 16px;
+  padding: 30px;
+  transition: all 0.3s ease;
+  border: 2px solid #f0f0f0;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.case-item:hover {
+  transform: translateY(-8px);
+  border-color: #4a6fa5;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
+}
+
+.case-item h4 {
+  font-size: 1.35rem;
+  color: #3a5a88;
+  margin-bottom: 16px;
+  font-weight: 600;
+  padding-bottom: 12px;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.case-description {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #555;
+  margin-bottom: 20px;
+  flex-grow: 1;
+}
+
+.case-result {
+  background-color: #eef4f9;
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  border-left: 4px solid #4a6fa5;
+}
+
+.case-result h5 {
+  font-size: 1.1rem;
+  color: #4a6fa5;
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+.case-result p {
+  font-size: 0.95rem;
+  color: #333;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.case-link {
+  display: inline-block;
+  color: #4a6fa5;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 10px 20px;
+  border: 2px solid #4a6fa5;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  font-size: 0.95rem;
+  text-align: center;
+  margin-top: auto;
+}
+
+.case-link:hover {
+  background-color: #4a6fa5;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(74, 111, 165, 0.3);
+}
+
+/* 解决方案优势 */
+.solutions-advantages {
+  background: linear-gradient(135deg, #4a6fa5, #5e83ba, #3a5a88);
+  color: white;
+  padding: 80px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.solutions-advantages::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.05) 0px, rgba(255, 255, 255, 0.05) 20px, transparent 20px, transparent 40px);
+}
+
+.solutions-advantages .container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.solutions-advantages h2 {
+  text-align: center;
+  font-size: 2.6rem;
+  margin-bottom: 50px;
+  font-weight: 700;
+  position: relative;
+  padding-bottom: 20px;
+}
+
+.solutions-advantages h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 2px;
+}
+
+.advantages-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 36px;
+}
+
+.advantage-item {
+  text-align: center;
+  padding: 36px 24px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  min-height: 320px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.advantage-item:hover {
+  transform: translateY(-8px);
+  background-color: rgba(255, 255, 255, 0.18);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.advantage-icon {
+  width: 100px;
+  height: 100px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 24px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.advantage-item h3 {
+  font-size: 1.5rem;
+  margin-bottom: 16px;
+  font-weight: 600;
+}
+
+.advantage-item p {
+  font-size: 1rem;
+  line-height: 1.7;
+  opacity: 0.95;
+  margin: 0;
+}
+
+/* 咨询服务 */
+.consultation-section {
+  padding: 80px 0;
+  background-color: #f8f9fa;
+  position: relative;
+}
+
+.consultation-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: linear-gradient(90deg, #4a6fa5, #5e83ba, #3a5a88);
+}
+
+.consultation-section .container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.consultation-section h2 {
+  text-align: center;
+  font-size: 2.4rem;
+  color: #3a5a88;
+  margin-bottom: 20px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.consultation-section p {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 50px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+.consultation-form {
+  background-color: white;
+  border-radius: 16px;
+  padding: 50px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.consultation-form::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, #4a6fa5, #5e83ba);
+}
+
+.form-group {
+  margin-bottom: 30px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 12px;
+}
+
+.form-control {
+  width: 100%;
+  padding: 14px 20px;
+  border: 2px solid #e0e0e0;
+  border-radius: 10px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background-color: white;
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: #4a6fa5;
+  box-shadow: 0 0 0 4px rgba(74, 111, 165, 0.15);
+}
+
+.btn {
+  display: inline-block;
+  padding: 14px 32px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: none;
+  width: 100%;
+}
+
+.btn-primary {
+  background-color: #4a6fa5;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #3a5a88;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(74, 111, 165, 0.4);
+}
+
+/* 页脚 */
+.footer {
+  background-color: #3a5a88;
+  color: white;
+  padding: 60px 0 30px;
+}
+
+.footer .container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.footer-column h3 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.footer-column h4 {
+  font-size: 1.1rem;
+  margin-bottom: 16px;
+  font-weight: 600;
+}
+
+.footer-column p {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  opacity: 0.9;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links li {
+  margin-bottom: 10px;
+}
+
+.footer-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 0.95rem;
+  opacity: 0.9;
+  transition: all 0.3s ease;
+}
+
+.footer-links a:hover {
+  opacity: 1;
+  transform: translateX(5px);
+}
+
+.footer-contact {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-contact li {
+  margin-bottom: 10px;
+  font-size: 0.95rem;
+  opacity: 0.9;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 30px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-bottom p {
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+/* 滚动渐入效果 */
+.fade-in-section {
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in-section.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .page-header {
+    padding: 60px 0 40px;
+  }
+  
+  .page-header h1 {
+    font-size: 2.4rem;
+    line-height: 1.3;
+  }
+  
+  .page-header p {
+    font-size: 1.1rem;
+  }
+  
+  .industry-nav {
+    padding: 16px;
+    gap: 12px;
+  }
+  
+  .industry-link {
+    padding: 10px 20px;
+    min-width: 120px;
+  }
+  
+  .industry-section {
+    padding: 36px 24px;
+    margin-bottom: 60px;
+  }
+  
+  .industry-section h2 {
+    font-size: 2rem;
+    padding-bottom: 12px;
+  }
+  
+  .industry-section h2::after {
+    width: 60px;
+    height: 4px;
+  }
+  
+  .industry-features h3,
+  .industry-cases h3 {
+    font-size: 1.5rem;
+  }
+  
+  .features-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  
+  .feature-icon {
+    width: 48px;
+    height: 48px;
+  }
+  
+  .cases-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  
+  .case-item {
+    padding: 24px;
+  }
+  
+  .solutions-advantages {
+    padding: 60px 0;
+  }
+  
+  .solutions-advantages h2 {
+    font-size: 2rem;
+    margin-bottom: 40px;
+  }
+  
+  .advantages-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  
+  .advantage-item {
+    padding: 28px 20px;
+    min-height: auto;
+  }
+  
+  .advantage-icon {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .consultation-section {
+    padding: 60px 0;
+  }
+  
+  .consultation-section h2 {
+    font-size: 2rem;
+  }
+  
+  .consultation-section p {
+    font-size: 1.1rem;
+    margin-bottom: 40px;
+  }
+  
+  .consultation-form {
+    padding: 40px 24px;
+  }
+  
+  .form-group {
+    margin-bottom: 24px;
+  }
+  
+  .btn {
+    padding: 12px 24px;
+  }
+  
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-header {
+    padding: 50px 0 30px;
+  }
+  
+  .page-header h1 {
+    font-size: 2rem;
+  }
+  
+  .page-header p {
+    font-size: 1rem;
+  }
+  
+  .industry-nav {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .industry-link {
+    width: 100%;
+    text-align: center;
+    padding: 10px 16px;
+  }
+  
+  .industry-section {
+    padding: 30px 20px;
+  }
+  
+  .industry-section h2 {
+    font-size: 1.8rem;
+  }
+  
+  .feature-item {
+    padding: 20px;
+  }
+  
+  .feature-icon {
+    width: 44px;
+    height: 44px;
+  }
+  
+  .case-item {
+    padding: 20px;
+  }
+  
+  .case-item h4 {
+    font-size: 1.25rem;
+  }
+  
+  .case-result {
+    padding: 16px;
+  }
+  
+  .solutions-advantages h2 {
+    font-size: 1.8rem;
+  }
+  
+  .advantage-icon {
+    width: 70px;
+    height: 70px;
+  }
+  
+  .advantage-item h3 {
+    font-size: 1.3rem;
+  }
+  
+  .consultation-form {
+    padding: 30px 20px;
+  }
+  
+  .form-control {
+    padding: 12px 16px;
+  }
+}

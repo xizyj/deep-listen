@@ -1,0 +1,226 @@
+/* 设备云平台方案页面样式 */
+.device-cloud-platform-page {
+}
+
+/* 平台架构 */
+.architecture-content {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.architecture-content.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.architecture-overview {
+  margin-bottom: 30px;
+}
+
+.architecture-overview h3 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.architecture-overview p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #666;
+}
+
+.architecture-diagram {
+  margin: 40px 0;
+}
+
+.architecture-layers {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.layer {
+  background-color: white;
+  border-radius: 8px;
+  padding: 30px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.layer:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.layer h4 {
+  font-size: 20px;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.layer p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #666;
+}
+
+/* 服务内容 */
+.services-content {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.services-content.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.service-item {
+  background-color: white;
+  border-radius: 8px;
+  padding: 30px;
+  margin-bottom: 30px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.service-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.service-item h3 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.service-item p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+/* 淡入区块 */
+.fade-in-section {
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-in-section.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 按钮样式 */
+.btn {
+  display: inline-block;
+  padding: 12px 30px;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+}
+
+.btn-primary {
+  background-color: #0066cc;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #0052a3;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 102, 204, 0.3);
+}
+
+/* 响应式设计 */
+@media (max-width: 992px) {
+  .architecture-layers {
+    grid-template-columns: 1fr;
+  }
+  
+  /* 标签页导航调整 */
+  .solution-tabs {
+    flex-wrap: wrap;
+  }
+  
+  .tab-button {
+    flex: 1 1 33%;
+  }
+}
+
+@media (max-width: 768px) {
+  .tab-button {
+    flex: 1 1 50%;
+  }
+}
+
+@media (max-width: 480px) {
+  .tab-button {
+    flex: 1 1 100%;
+  }
+}
+
+/* 加载动画 */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 表格滚动优化 */
+.technical-table {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* 悬停效果优化 */
+.service-item, .layer, .application-item, .benefit-item {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.service-item:hover, .layer:hover, .application-item:hover, .benefit-item:hover {
+  transform: translateY(-5px);
+}
+
+/* 标签页切换动画 */
+.tab-content > div {
+  animation: fadeIn 0.5s ease-out;
+}
+
+/* 图片悬停效果增强 */
+.feature-image img, .application-image img {
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.feature-image:hover img, .application-image:hover img {
+  transform: scale(1.05);
+}
+
+/* 下载链接悬停效果 */
+.download-link {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.download-link:hover {
+  transform: translateY(-3px);
+}
+
+/* 表格行悬停效果 */
+.technical-table tr:hover {
+  background-color: #e3f2fd !important;
+  transition: background-color 0.3s ease;
+}

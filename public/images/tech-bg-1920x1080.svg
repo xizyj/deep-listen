@@ -1,0 +1,72 @@
+<svg width="1920" height="1080" viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#1e293b" />
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="15" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+  
+  <!-- 背景 -->
+  <rect width="1920" height="1080" fill="url(#bg-gradient)" />
+  
+  <!-- 网格线 -->
+  <g opacity="0.1">
+    <path d="M0,0 H1920" stroke="#94a3b8" stroke-width="1" />
+    <path d="M0,100 H1920" stroke="#94a3b8" stroke-width="1" />
+    <path d="M0,200 H1920" stroke="#94a3b8" stroke-width="1" />
+    <path d="M0,300 H1920" stroke="#94a3b8" stroke-width="1" />
+    <path d="M0,400 H1920" stroke="#94a3b8" stroke-width="1" />
+    <path d="M0,500 H1920" stroke="#94a3b8" stroke-width="1" />
+    <path d="M0,600 H1920" stroke="#94a3b8" stroke-width="1" />
+    <path d="M0,700 H1920" stroke="#94a3b8" stroke-width="1" />
+    <path d="M0,800 H1920" stroke="#94a3b8" stroke-width="1" />
+    <path d="M0,900 H1920" stroke="#94a3b8" stroke-width="1" />
+    <path d="M0,1000 H1920" stroke="#94a3b8" stroke-width="1" />
+    
+    <path d="M0,0 V1080" stroke="#94a3b8" stroke-width="1" />
+    <path d="M100,0 V1080" stroke="#94a3b8" stroke-width="1" />
+    <path d="M200,0 V1080" stroke="#94a3b8" stroke-width="1" />
+    <path d="M300,0 V1080" stroke="#94a3b8" stroke-width="1" />
+    <path d="M400,0 V1080" stroke="#94a3b8" stroke-width="1" />
+    <path d="M500,0 V1080" stroke="#94a3b8" stroke-width="1" />
+    <path d="M600,0 V1080" stroke="#94a3b8" stroke-width="1" />
+    <path d="M700,0 V1080" stroke="#94a3b8" stroke-width="1" />
+    <path d="M800,0 V1080" stroke="#94a3b8" stroke-width="1" />
+    <path d="M900,0 V1080" stroke="#94a3b8" stroke-width="1" />
+    <path d="M1000,0 V1080" stroke="#94a3b8" stroke-width="1" />
+    <path d="M1100,0 V1080" stroke="#94a3b8" stroke-width="1" />
+    <path d="M1200,0 V1080" stroke="#94a3b8" stroke-width="1" />
+    <path d="M1300,0 V1080" stroke="#94a3b8" stroke-width="1" />
+    <path d="M1400,0 V1080" stroke="#94a3b8" stroke-width="1" />
+    <path d="M1500,0 V1080" stroke="#94a3b8" stroke-width="1" />
+    <path d="M1600,0 V1080" stroke="#94a3b8" stroke-width="1" />
+    <path d="M1700,0 V1080" stroke="#94a3b8" stroke-width="1" />
+    <path d="M1800,0 V1080" stroke="#94a3b8" stroke-width="1" />
+    <path d="M1900,0 V1080" stroke="#94a3b8" stroke-width="1" />
+  </g>
+  
+  <!-- 科技感元素 -->
+  <circle cx="960" cy="540" r="300" fill="none" stroke="#38bdf8" stroke-width="2" opacity="0.5" filter="url(#glow)" />
+  <circle cx="960" cy="540" r="250" fill="none" stroke="#22d3ee" stroke-width="2" opacity="0.5" />
+  <circle cx="960" cy="540" r="200" fill="none" stroke="#06b6d4" stroke-width="2" opacity="0.5" />
+  
+  <!-- 科技图标 -->
+  <g transform="translate(800, 400)" filter="url(#glow)">
+    <rect x="-50" y="-50" width="100" height="100" fill="none" stroke="#38bdf8" stroke-width="3" rx="10" />
+    <rect x="-30" y="-30" width="60" height="60" fill="none" stroke="#22d3ee" stroke-width="2" rx="5" />
+    <path d="M-20,-20 L20,20 M-20,20 L20,-20" stroke="#06b6d4" stroke-width="3" />
+  </g>
+  
+  <!-- 数据流动效果 -->
+  <g opacity="0.7">
+    <circle cx="960" cy="540" r="5" fill="#38bdf8" />
+    <path d="M960,540 L1200,300" stroke="#38bdf8" stroke-width="2" stroke-dasharray="5,5" />
+    <path d="M960,540 L720,300" stroke="#38bdf8" stroke-width="2" stroke-dasharray="5,5" />
+    <path d="M960,540 L1200,780" stroke="#38bdf8" stroke-width="2" stroke-dasharray="5,5" />
+    <path d="M960,540 L720,780" stroke="#38bdf8" stroke-width="2" stroke-dasharray="5,5" />
+  </g>
+</svg>
