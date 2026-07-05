@@ -1,37 +1,21 @@
-import React, { useState, useEffect } from 'react';
-import Navbar from '../../components/Navbar';
+import { useState } from 'react';
+import Layout from '../../components/Layout';
 import { Link } from 'react-router-dom';
+import { ROUTES } from '../../constants/routes';
+import { useIntersectionFadeIn } from '../../hooks/useIntersectionFadeIn';
 import '../../styles/SoftwareSolution.css';
 
-const SoftwareSolution: React.FC = () => {
+const SoftwareSolution = () => {
   const [activeTab, setActiveTab] = useState('overview');
-  const [isVisible, setIsVisible] = useState(false);
 
-  // 处理滚动渐入效果
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollPosition = window.scrollY;
-      
-      // 当页面滚动超过100px时显示内容
-      if (scrollPosition > 100) {
-        setIsVisible(true);
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    // 初始检查
-    handleScroll();
-    
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
+  useIntersectionFadeIn({
+    selector: '.overview-content, .features-content, .applications-content, .technical-content',
+    visibleClass: 'fade-in',
+  });
 
   return (
+    <Layout>
     <div className="software-solution-page">
-      {/* 导航栏 */}
-      <Navbar />
-      
       {/* 页面标题 */}
       <section className="page-header">
         <div className="container">
@@ -75,7 +59,7 @@ const SoftwareSolution: React.FC = () => {
           <div className="tab-content">
             {/* 方案概述 */}
             {activeTab === 'overview' && (
-              <div className={`overview-content ${isVisible ? 'fade-in' : ''}`}>
+              <div className="overview-content">
                 <div className="overview-main">
                   <img 
                     src="/images/tech-bg-1920x1080.svg" 
@@ -142,7 +126,7 @@ const SoftwareSolution: React.FC = () => {
             
             {/* 核心特性 */}
             {activeTab === 'features' && (
-              <div className={`features-content ${isVisible ? 'fade-in' : ''}`}>
+              <div className="features-content">
                 <div className="feature-section">
                   <div className="feature-image">
                     <img 
@@ -213,7 +197,7 @@ const SoftwareSolution: React.FC = () => {
             
             {/* 应用场景 */}
             {activeTab === 'applications' && (
-              <div className={`applications-content ${isVisible ? 'fade-in' : ''}`}>
+              <div className="applications-content">
                 <div className="applications-grid">
                   <div className="application-item">
                     <div className="application-image">
@@ -310,7 +294,7 @@ const SoftwareSolution: React.FC = () => {
             
             {/* 技术参数 */}
             {activeTab === 'technical' && (
-              <div className={`technical-content ${isVisible ? 'fade-in' : ''}`}>
+              <div className="technical-content">
                 <div className="technical-table">
                   <table>
                     <thead>
@@ -409,56 +393,12 @@ const SoftwareSolution: React.FC = () => {
           {/* 联系我们 */}
           <div className="contact-section">
             <h3>如需进一步了解，请联系我们</h3>
-            <Link to="/contact" className="btn btn-primary">联系我们</Link>
+            <Link to={ROUTES.contact} className="btn btn-primary">联系我们</Link>
           </div>
         </div>
       </section>
-      
-      {/* 页脚 */}
-      <footer className="footer">
-        <div className="container">
-          <div className="footer-content">
-            <div className="footer-column">
-              <h3>深聆科技</h3>
-              <p>可靠、省心的智能语音方案专家</p>
-            </div>
-            
-            <div className="footer-column">
-              <h4>产品与服务</h4>
-              <ul className="footer-links">
-                <li><a href="/solutions">解决方案</a></li>
-                <li><a href="/products">智能产品</a></li>
-                <li><a href="/industry-applications">行业应用</a></li>
-                <li><a href="/resources">资源中心</a></li>
-              </ul>
-            </div>
-            
-            <div className="footer-column">
-              <h4>关于我们</h4>
-              <ul className="footer-links">
-                <li><a href="/about/company">公司简介</a></li>
-                <li><a href="/about/team">团队介绍</a></li>
-                {/* <li><a href="/about/news">新闻动态</a></li> */}
-                <li><a href="/contact">联系我们</a></li>
-              </ul>
-            </div>
-            
-            <div className="footer-column">
-              <h4>联系我们</h4>
-              <ul className="footer-contact">
-                <li>地址：浙江省杭州市滨江区越达巷82号房天下大厦</li>
-                <li>电话：18626895139</li>
-                <li>邮箱：support@deeplisten.cn</li>
-              </ul>
-            </div>
-          </div>
-          
-          <div className="footer-bottom">
-            <p>© 2025 浙江深聆科技有限公司 保留所有权利. <a href="https://beian.miit.gov.cn/" target="_blank">浙ICP备2025193072号-1</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://beian.mps.gov.cn/#/query/webSearch?code=33011302000843" target="_blank">浙公网安备33011302000843号</a></p>
-          </div>
-        </div>
-      </footer>
     </div>
+    </Layout>
   );
 };
 

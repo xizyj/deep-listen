@@ -1,13 +1,10 @@
-import React from 'react';
-import Navbar from '../components/Navbar';
+import Layout from '../components/Layout';
 import '../styles/Contact.css';
 
-const Contact: React.FC = () => {
+const Contact = () => {
   return (
+    <Layout>
     <div className="contact-page">
-      {/* 导航栏 */}
-      <Navbar />
-      
       {/* 页面头部 */}
       <header className="page-header">
         <div className="container">
@@ -122,52 +119,8 @@ const Contact: React.FC = () => {
           </div>
         </div>
       </section>
-      
-      {/* 页脚 */}
-      <footer className="footer">
-        <div className="container">
-          <div className="footer-content">
-            <div className="footer-column">
-              <h3>深聆科技</h3>
-              <p>可靠、省心的智能语音方案专家</p>
-            </div>
-            
-            <div className="footer-column">
-              <h4>产品与服务</h4>
-              <ul className="footer-links">
-                <li><a href="/solutions">解决方案</a></li>
-                <li><a href="/products">智能产品</a></li>
-                <li><a href="/industry-applications">行业应用</a></li>
-                <li><a href="/resource-center">资源中心</a></li>
-              </ul>
-            </div>
-            
-            <div className="footer-column">
-              <h4>关于我们</h4>
-              <ul className="footer-links">
-                <li><a href="/about/company">公司简介</a></li>
-                <li><a href="/about/team">团队介绍</a></li>
-                {/* <li><a href="/about/news">新闻动态</a></li> */}
-                <li><a href="/contact">联系我们</a></li>
-              </ul>
-            </div>
-            
-            <div className="footer-column">
-              <h4>联系我们</h4>
-              <ul className="footer-contact">
-                <li>地址：浙江省杭州市滨江区越达巷82号房天下大厦</li>
-                <li>电话：18626895139</li>
-                <li>邮箱：support@deeplisten.cn</li>
-              </ul>
-            </div>
-          </div>
-          
-          <div className="footer-bottom">
-            <p>© 2025 浙江深聆科技有限公司 保留所有权利. <a href="https://beian.miit.gov.cn/" target="_blank">浙ICP备2025193072号-1</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://beian.mps.gov.cn/#/query/webSearch?code=33011302000843" target="_blank">浙公网安备33011302000843号</a></p>
-          </div>
-        </div>
-      </footer>
     </div>
+    </Layout>
   );
 };
 

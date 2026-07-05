@@ -1,5 +1,6 @@
-import React, { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
+import { ROUTES } from '../constants/routes';
 import '../styles/Navbar.css';
 
 interface SubMenu {
@@ -13,131 +14,59 @@ interface MenuItem {
   subMenus?: SubMenu[];
 }
 
-const Navbar: React.FC = () => {
+const Navbar = () => {
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const navRef = useRef<HTMLDivElement>(null);
-  const mobileMenuRef = useRef<HTMLDivElement>(null);
 
-  // 定义菜单项 - 只包含实际存在的页面
   const menuItems: MenuItem[] = [
     {
       title: '解决方案',
-      path: '/solutions',
+      path: ROUTES.solutions,
       subMenus: [
-        {
-          title: '软件算法方案',
-          path: '/solutions'
-        },
-        {
-          title: '智能硬件方案',
-          path: '/solutions/intelligent-hardware-solution'
-        },
-        {
-          title: '设备云平台解决方案',
-          path: '/solutions'
-        }
-      ]
+        { title: '软件算法方案', path: ROUTES.softwareSolution },
+        { title: '智能硬件方案', path: ROUTES.intelligentHardwareSolution },
+        { title: '设备云平台解决方案', path: ROUTES.deviceCloudPlatformSolution },
+      ],
     },
     {
       title: '智能产品',
-      path: '/products',
+      path: ROUTES.products,
       subMenus: [
-        {
-          title: '语音门锁',
-          path: '/products#voice-lock'
-        },
-        {
-          title: '语音遥控器',
-          path: '/products#voice-remote'
-        },
-        {
-          title: '语音风扇',
-          path: '/products#voice-fan'
-        },
-        {
-          title: '语音面板',
-          path: '/products#voice-panel'
-        },
-        {
-          title: '智能拾音器',
-          path: '/products#smart-microphone'
-        },
-        {
-          title: '语音智能体',
-          path: '/products#voice-agent'
-        }
-      ]
+        { title: '语音门锁', path: `${ROUTES.products}#voice-lock` },
+        { title: '语音遥控器', path: `${ROUTES.products}#voice-remote` },
+        { title: '语音风扇', path: `${ROUTES.products}#voice-fan` },
+        { title: '语音面板', path: `${ROUTES.products}#voice-panel` },
+        { title: '智能拾音器', path: `${ROUTES.products}#smart-microphone` },
+        { title: '语音智能体', path: `${ROUTES.products}#voice-agent` },
+      ],
     },
-      {
-        title: '行业应用',
-        path: '/industry-applications',
-        subMenus: [
-          {
-            title: '智能工业',
-            path: '/industry-applications#smart-industry'
-          },
-          {
-            title: '智能工具',
-            path: '/industry-applications#smart-tools'
-          },
-          {
-            title: '智能安防',
-            path: '/industry-applications#smart-security'
-          },
-          {
-            title: '智能家居家电',
-            path: '/industry-applications#smart-home-appliance'
-          },
-          {
-            title: '智能消费电子',
-            path: '/industry-applications#smart-consumer-electronics'
-          }
-        ]
-      },
-    // {
-    //   title: '资源中心',
-    //   path: '/resource-center',
-    //   subMenus: [
-    //     {
-    //       title: '资料下载',
-    //       path: '/resource-center#documents'
-    //     },
-    //     {
-    //       title: '技术支持',
-    //       path: '/resource-center#technical-support'
-    //     },
-    //     {
-    //       title: '开发者社区',
-    //       path: '/resource-center#developer-community'
-    //     }
-    //   ]
-    // },
-    {      title: '关于我们',
-      path: '/about/company',
+    {
+      title: '行业应用',
+      path: ROUTES.industryApplications,
       subMenus: [
-        {          title: '公司简介',
-          path: '/about/company'
-        },
-        {          title: '团队介绍',
-          path: '/about/team'
-        },
-        // {          title: '新闻动态',
-        //   path: '/about/news'
-        // },
-        {          title: '联系我们',
-          path: '/contact'
-        }
-      ]
-    }
+        { title: '智能工业', path: `${ROUTES.industryApplications}#smart-industry` },
+        { title: '智能工具', path: `${ROUTES.industryApplications}#smart-tools` },
+        { title: '智能安防', path: `${ROUTES.industryApplications}#smart-security` },
+        { title: '智能家居家电', path: `${ROUTES.industryApplications}#smart-home-appliance` },
+        { title: '智能消费电子', path: `${ROUTES.industryApplications}#smart-consumer-electronics` },
+      ],
+    },
+    {
+      title: '关于我们',
+      path: ROUTES.aboutCompany,
+      subMenus: [
+        { title: '公司简介', path: ROUTES.aboutCompany },
+        { title: '团队介绍', path: ROUTES.aboutTeam },
+        { title: '联系我们', path: ROUTES.contact },
+      ],
+    },
   ];
 
-  // 处理菜单项悬停
   const handleMenuHover = (title: string | null) => {
     setActiveMenu(title);
   };
 
-  // 处理点击外部关闭下拉菜单
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (navRef.current && !navRef.current.contains(event.target as Node)) {
@@ -156,19 +85,19 @@ const Navbar: React.FC = () => {
     <nav className="navbar" ref={navRef}>
       <div className="container">
         <div className="navbar-brand">
-          <Link to="/">
-            <h1>
-            <img style={{ width: '150px',verticalAlign: 'middle',marginRight: '8px'}} src='/logo.png' alt="深聆科技" />
-              深聆科技</h1>
+          <Link to={ROUTES.home}>
+            <span className="navbar-brand-text">
+              <img style={{ width: '150px', verticalAlign: 'middle', marginRight: '8px' }} src="/logo.png" alt="深聆科技" />
+              深聆科技
+            </span>
           </Link>
         </div>
-        
-        {/* 桌面端导航 */}
+
         <div className="navbar-desktop">
           <ul className="navbar-menu">
             {menuItems.map((item) => (
-              <li 
-                key={item.title} 
+              <li
+                key={item.title}
                 className={`navbar-item ${activeMenu === item.title ? 'active' : ''}`}
                 onMouseEnter={() => handleMenuHover(item.title)}
                 onMouseLeave={() => handleMenuHover(null)}
@@ -176,11 +105,9 @@ const Navbar: React.FC = () => {
                 <Link to={item.path} className="navbar-link">
                   {item.title}
                 </Link>
-                
+
                 {item.subMenus && (
-                  <div 
-                    className={`navbar-dropdown ${activeMenu === item.title ? 'show' : ''}`}
-                  >
+                  <div className={`navbar-dropdown ${activeMenu === item.title ? 'show' : ''}`}>
                     <div className="navbar-dropdown-content">
                       {item.subMenus.map((subMenu) => (
                         <div key={subMenu.title} className="navbar-dropdown-item">
@@ -196,10 +123,9 @@ const Navbar: React.FC = () => {
             ))}
           </ul>
         </div>
-        
-        {/* 移动端菜单按钮 */}
+
         <div className="navbar-mobile-toggle">
-          <button 
+          <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className="mobile-menu-btn"
           >
@@ -208,29 +134,25 @@ const Navbar: React.FC = () => {
             <span className={`menu-icon-bar ${isMobileMenuOpen ? 'active' : ''}`}></span>
           </button>
         </div>
-        
-        {/* 移动端菜单 */}
-        <div 
-          className={`navbar-mobile ${isMobileMenuOpen ? 'open' : ''}`}
-          ref={mobileMenuRef}
-        >
+
+        <div className={`navbar-mobile ${isMobileMenuOpen ? 'open' : ''}`}>
           <ul className="mobile-menu">
             {menuItems.map((item) => (
               <li key={item.title} className="mobile-menu-item">
-                <Link 
-                  to={item.path} 
+                <Link
+                  to={item.path}
                   className="mobile-menu-link"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {item.title}
                 </Link>
-                
+
                 {item.subMenus && (
                   <div className="mobile-submenu">
                     {item.subMenus.map((subMenu) => (
-                      <Link 
-                        key={subMenu.title} 
-                        to={subMenu.path} 
+                      <Link
+                        key={subMenu.title}
+                        to={subMenu.path}
                         className="mobile-submenu-link"
                         onClick={() => setIsMobileMenuOpen(false)}
                       >

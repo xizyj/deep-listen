@@ -1,4 +1,26 @@
 /* 设备云平台方案页面样式 */
+
+.page-header {
+  padding: calc(var(--navbar-height) + 60px) 0 60px;
+  background: linear-gradient(135deg, #0066cc 0%, #0099ff 100%);
+  color: white;
+  text-align: center;
+}
+
+.page-header h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.page-header p {
+  font-size: 18px;
+  max-width: 700px;
+  margin: 0 auto;
+  opacity: 0.9;
+  color: white;
+}
+
 .device-cloud-platform-page {
 }
 

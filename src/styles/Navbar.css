@@ -23,7 +23,7 @@
 }
 
 /* 品牌样式 */
-.navbar-brand h1 {
+.navbar-brand .navbar-brand-text {
   font-size: 24px;
   font-weight: 700;
   color: #333;
@@ -148,7 +148,7 @@
 /* 移动端菜单 */
 .navbar-mobile {
   position: fixed;
-  top: 70px;
+  top: var(--navbar-height);
   left: 0;
   right: 0;
   background-color: white;
@@ -159,7 +159,7 @@
 }
 
 .navbar-mobile.open {
-  height: calc(100vh - 70px);
+  height: calc(100vh - var(--navbar-height));
   overflow-y: auto;
 }
 
@@ -213,7 +213,7 @@
     padding: 10px 15px;
   }
   
-  .navbar-brand h1 {
+  .navbar-brand .navbar-brand-text {
     font-size: 20px;
   }
 }

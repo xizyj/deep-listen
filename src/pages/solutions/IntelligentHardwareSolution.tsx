@@ -1,41 +1,14 @@
-import React, {  useEffect } from 'react';
-import Navbar from '../../components/Navbar';
-import '../../styles/SoftwareSolution.css'; // 复用部分样式
-import '../../styles/IntelligentHardwareSolution.css'; // 特定样式
+import Layout from '../../components/Layout';
+import { useIntersectionFadeIn } from '../../hooks/useIntersectionFadeIn';
+import '../../styles/SoftwareSolution.css';
+import '../../styles/IntelligentHardwareSolution.css';
 
-const IntelligentHardwareSolution: React.FC = () => {
-
-  // 处理滚动渐入效果
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            // 直接添加fade-in类到DOM元素
-            entry.target.classList.add('fade-in');
-            // 为了性能考虑，一旦显示就停止观察
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-
-    document.querySelectorAll('.fade-in-section').forEach((section) => {
-      observer.observe(section);
-    });
-
-    return () => {
-      document.querySelectorAll('.fade-in-section').forEach((section) => {
-        observer.unobserve(section);
-      });
-    };
-  }, []);
+const IntelligentHardwareSolution = () => {
+  useIntersectionFadeIn();
 
   return (
+    <Layout>
     <div className="intelligent-hardware-page">
-      <Navbar />
-      
       {/* 页面标题 */}
       <div className="page-header">
         <div className="container">
@@ -598,47 +571,8 @@ const IntelligentHardwareSolution: React.FC = () => {
         
         </div>
       </div>
-
-      {/* 页脚 */}
-      <footer className="footer">
-        <div className="container">
-          <div className="footer-content">
-            <div className="footer-column">
-              <h3>深聆科技</h3>
-              <p>为您提供全方位的AI智能解决方案，助力企业数字化转型和智能化升级。</p>
-            </div>
-            <div className="footer-column">
-              <h4>解决方案</h4>
-              <ul className="footer-links">
-                <li><a href="#">软件算法方案</a></li>
-                <li><a href="#">智能硬件方案</a></li>
-                <li><a href="#">设备云平台方案</a></li>
-              </ul>
-            </div>
-            <div className="footer-column">
-              <h4>关于我们</h4>
-              <ul className="footer-links">
-                <li><a href="#">公司简介</a></li>
-                <li><a href="#">团队介绍</a></li>
-                {/* <li><a href="#">新闻动态</a></li> */}
-                <li><a href="#">加入我们</a></li>
-              </ul>
-            </div>
-            <div className="footer-column">
-              <h4>联系我们</h4>
-              <ul className="footer-contact">
-                <li>地址：浙江省杭州市滨江区越达巷82号房天下大厦</li>
-                <li>电话：18626895139</li>
-                <li>邮箱：support@deeplisten.cn</li>
-              </ul>
-            </div>
-          </div>
-          <div className="footer-bottom">
-            <p>© 2025 浙江深聆科技有限公司 保留所有权利. <a href="https://beian.miit.gov.cn/" target="_blank">浙ICP备2025193072号-1</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://beian.mps.gov.cn/#/query/webSearch?code=33011302000843" target="_blank">浙公网安备33011302000843号</a></p>
-          </div>
-        </div>
-      </footer>
     </div>
+    </Layout>
   );
 };
 

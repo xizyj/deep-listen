@@ -1,35 +1,13 @@
-import React, { useState, useEffect } from 'react';
-import Navbar from '../../components/Navbar';
+import { useState } from 'react';
+import Layout from '../../components/Layout';
+import { useIntersectionFadeIn } from '../../hooks/useIntersectionFadeIn';
 import '../../styles/DeviceCloudPlatformSolution.css';
 
-const DeviceCloudPlatformSolution: React.FC = () => {
+const DeviceCloudPlatformSolution = () => {
   const [activeTab, setActiveTab] = useState('overview');
-  const [visibleSections, setVisibleSections] = useState<Record<string, boolean>>({});
 
-  // 处理滚动渐入效果
-  useEffect(() => {
-    const handleScroll = () => {
-      const sections = document.querySelectorAll('.fade-in-block');
-      sections.forEach((section) => {
-        const rect = section.getBoundingClientRect();
-        const isVisible = rect.top < window.innerHeight * 0.85;
-        if (isVisible) {
-          setVisibleSections((prev) => ({ ...prev, [section.id]: true }));
-        }
-      });
-    };
+  useIntersectionFadeIn({ selector: '.fade-in-block', visibleClass: 'visible' });
 
-    // 初始检查
-    handleScroll();
-    // 添加滚动事件监听
-    window.addEventListener('scroll', handleScroll);
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
-
-  // 标签页切换
   const handleTabChange = (tab: string) => {
     setActiveTab(tab);
     // 滚动到对应区域
@@ -181,9 +159,8 @@ const DeviceCloudPlatformSolution: React.FC = () => {
   ];
 
   return (
+    <Layout>
     <div className="solution-page">
-      <Navbar />
-      
       {/* 页面标题 */}
       <div className="page-header">
         <div className="container">
@@ -242,7 +219,7 @@ const DeviceCloudPlatformSolution: React.FC = () => {
           {/* 方案概述 */}
           <section 
             id="overview" 
-            className={`fade-in-block ${visibleSections['overview'] ? 'visible' : ''}`}
+            className="fade-in-block"
           >
             <h2>方案概述</h2>
             <div className="overview-content">
@@ -273,7 +250,7 @@ const DeviceCloudPlatformSolution: React.FC = () => {
           {/* 核心特性 */}
           <section 
             id="features" 
-            className={`fade-in-block ${visibleSections['features'] ? 'visible' : ''}`}
+            className="fade-in-block"
           >
             <h2>核心特性</h2>
             <div className="features-grid">
@@ -338,7 +315,7 @@ const DeviceCloudPlatformSolution: React.FC = () => {
           {/* 平台架构 */}
           <section 
             id="architecture" 
-            className={`fade-in-block ${visibleSections['architecture'] ? 'visible' : ''}`}
+            className="fade-in-block"
           >
             <h2>平台架构</h2>
             <p className="section-description">设备云平台采用分层架构设计，包括设备接入层、通信传输层、数据存储层、数据分析层和应用服务层。各层之间通过标准接口进行交互，确保系统的可扩展性和灵活性。</p>
@@ -361,7 +338,7 @@ const DeviceCloudPlatformSolution: React.FC = () => {
           {/* 应用场景 */}
           <section 
             id="scenarios" 
-            className={`fade-in-block ${visibleSections['scenarios'] ? 'visible' : ''}`}
+            className="fade-in-block"
           >
             <h2>应用场景</h2>
             <div className="scenarios-grid">
@@ -378,7 +355,7 @@ const DeviceCloudPlatformSolution: React.FC = () => {
           {/* 服务内容 */}
           <section 
             id="services" 
-            className={`fade-in-block ${visibleSections['services'] ? 'visible' : ''}`}
+            className="fade-in-block"
           >
             <h2>服务内容</h2>
             <div className="services-grid">
@@ -399,7 +376,7 @@ const DeviceCloudPlatformSolution: React.FC = () => {
           {/* 技术参数 */}
           <section 
             id="params" 
-            className={`fade-in-block ${visibleSections['params'] ? 'visible' : ''}`}
+            className="fade-in-block"
           >
             <h2>技术参数</h2>
             <div className="params-table">
@@ -428,47 +405,8 @@ const DeviceCloudPlatformSolution: React.FC = () => {
           </div>
         </div>
       </div>
-
-      {/* 页脚 */}
-      <footer className="footer">
-        <div className="container">
-          <div className="footer-content">
-            <div className="footer-column">
-              <h3>深聆科技</h3>
-              <p>为您提供全方位的AI智能解决方案，助力企业数字化转型和智能化升级。</p>
-            </div>
-            <div className="footer-column">
-              <h4>解决方案</h4>
-              <ul className="footer-links">
-                <li><a href="/solutions/software">软件算法方案</a></li>
-                <li><a href="/solutions/intelligent-hardware-solution">智能硬件方案</a></li>
-                <li><a href="/solutions/device-cloud-platform-solution">设备云平台方案</a></li>
-              </ul>
-            </div>
-            <div className="footer-column">
-              <h4>关于我们</h4>
-              <ul className="footer-links">
-                <li><a href="#">公司简介</a></li>
-                <li><a href="#">团队介绍</a></li>
-                {/* <li><a href="#">新闻动态</a></li> */}
-                <li><a href="#">加入我们</a></li>
-              </ul>
-            </div>
-            <div className="footer-column">
-              <h4>联系我们</h4>
-              <ul className="footer-contact">
-                <li>地址：浙江省杭州市滨江区越达巷82号房天下大厦</li>
-                <li>电话：18626895139</li>
-                <li>邮箱：support@deeplisten.cn</li>
-              </ul>
-            </div>
-          </div>
-          <div className="footer-bottom">
-            <p>© 2025 浙江深聆科技有限公司 保留所有权利. <a href="https://beian.miit.gov.cn/" target="_blank">浙ICP备2025193072号-1</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://beian.mps.gov.cn/#/query/webSearch?code=33011302000843" target="_blank">浙公网安备33011302000843号</a></p>
-          </div>
-        </div>
-      </footer>
     </div>
+    </Layout>
   );
 };
 

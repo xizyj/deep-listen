@@ -1,8 +1,9 @@
-import React from 'react';
-import Navbar from '../../components/Navbar';
+import { Link } from 'react-router-dom';
+import Layout from '../../components/Layout';
+import { ROUTES } from '../../constants/routes';
 import '../../styles/About.css';
 
-const Team: React.FC = () => {
+const Team = () => {
   // 团队成员数据
   
 
@@ -31,10 +32,8 @@ const Team: React.FC = () => {
   ];
 
   return (
+    <Layout>
     <div className="about-team">
-      {/* 导航栏 */}
-      <Navbar />
-      
       {/* 页面头部 */}
       <header className="page-header">
         <div className="container">
@@ -64,7 +63,7 @@ const Team: React.FC = () => {
             <div className="culture-image">
               {/* 这里可以放置公司文化图片 */}
               <div className="image-placeholder">
-                  <img style={{width:'600px',height:'auto'}} src="/images/gongsiwenhua.jpeg" alt="公司文化图片" />
+                  <img style={{width:'600px',height:'auto'}} src="/images/gongsiwenhua.jpeg" alt="公司文化图片" loading="lazy" />
               </div>
             </div>
           </div>
@@ -78,57 +77,13 @@ const Team: React.FC = () => {
             <h2>加入我们</h2>
             <p>我们正在寻找有才华、有激情的人才加入我们的团队，共同推动智能语音技术的发展。</p>
             <div className="join-button">
-              <a href="/contact" className="btn btn-primary">联系我们</a>
+              <Link to={ROUTES.contact} className="btn btn-primary">联系我们</Link>
             </div>
           </div>
         </div>
       </section>
-      
-      {/* 页脚 */}
-      <footer className="footer">
-        <div className="container">
-          <div className="footer-content">
-            <div className="footer-column">
-              <h3>深聆科技</h3>
-              <p>可靠、省心的智能语音方案专家</p>
-            </div>
-            
-            <div className="footer-column">
-              <h4>产品与服务</h4>
-              <ul className="footer-links">
-                <li><a href="/solutions">解决方案</a></li>
-                <li><a href="/products">智能产品</a></li>
-                <li><a href="/industry-applications">行业应用</a></li>
-                <li><a href="/resource-center">资源中心</a></li>
-              </ul>
-            </div>
-            
-            <div className="footer-column">
-              <h4>关于我们</h4>
-              <ul className="footer-links">
-                <li><a href="/about/company">公司简介</a></li>
-                <li><a href="/about/team">团队介绍</a></li>
-                {/* <li><a href="/about/news">新闻动态</a></li> */}
-                <li><a href="/contact">联系我们</a></li>
-              </ul>
-            </div>
-            
-            <div className="footer-column">
-              <h4>联系我们</h4>
-              <ul className="footer-contact">
-                <li>地址：浙江省杭州市滨江区越达巷82号房天下大厦</li>
-                <li>电话：18626895139</li>
-                <li>邮箱：support@deeplisten.cn</li>
-              </ul>
-            </div>
-          </div>
-          
-          <div className="footer-bottom">
-            <p>© 2025 浙江深聆科技有限公司 保留所有权利. <a href="https://beian.miit.gov.cn/" target="_blank">浙ICP备2025193072号-1</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://beian.mps.gov.cn/#/query/webSearch?code=33011302000843" target="_blank">浙公网安备33011302000843号</a></p>
-          </div>
-        </div>
-      </footer>
     </div>
+    </Layout>
   );
 };
 

@@ -1,4 +1,5 @@
-import React, { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, type CSSProperties } from 'react';
+import { Link } from 'react-router-dom';
 import '../styles/Carousel.css';
 
 interface CarouselItem {
@@ -11,7 +12,7 @@ interface CarouselItem {
   buttonLink: string;
 }
 
-const Carousel: React.FC = () => {
+const Carousel = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
   const [showText, setShowText] = useState(true);
@@ -154,6 +155,10 @@ const Carousel: React.FC = () => {
 
   const currentItem = carouselItems[currentSlide];
 
+  const carouselStyle = {
+    '--carousel-duration': `${autoplayMs}ms`,
+  } as CSSProperties;
+
   return (
     <div 
       className="carousel"
@@ -163,11 +168,7 @@ const Carousel: React.FC = () => {
       onTouchStart={handleTouchStart}
       onTouchMove={handleTouchMove}
       onTouchEnd={handleTouchEnd}
-      style={{
-        // control progress duration via CSS var
-        // @ts-ignore
-        '--carousel-duration': `${autoplayMs}ms`
-      } as React.CSSProperties}
+      style={carouselStyle}
     >
       {/* 背景分层与Ken Burns */}
       <div className="carousel-slides">
@@ -190,15 +191,15 @@ const Carousel: React.FC = () => {
         <div className={`carousel-item ${isAnimating ? 'animating' : ''}`}>
           <div className="carousel-content">
             <div className={`carousel-text ${showText ? 'fade-in' : ''}`}>
-              <h2 className="carousel-title" aria-live="polite">{currentItem.title}</h2>
-              <h3 className="carousel-subtitle">{currentItem.subtitle}</h3>
+              <h1 className="carousel-title" aria-live="polite">{currentItem.title}</h1>
+              <h2 className="carousel-subtitle">{currentItem.subtitle}</h2>
               <p className="carousel-description">{currentItem.description}</p>
-              <a 
-                href={currentItem.buttonLink} 
+              <Link
+                to={currentItem.buttonLink}
                 className="carousel-button btn btn-primary"
               >
                 {currentItem.buttonText}
-              </a>
+              </Link>
             </div>
           </div>
         </div>

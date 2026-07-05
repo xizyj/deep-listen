@@ -1,34 +1,16 @@
-import React, { useState, useEffect } from 'react';
-import Navbar from '../components/Navbar';
+import { useState } from 'react';
+import Layout from '../components/Layout';
+import { useIntersectionFadeIn } from '../hooks/useIntersectionFadeIn';
+import type { DownloadResource, ResourceTab, Resources, TutorialResource, CaseStudyResource } from '../types/resource';
 import './ResourceCenter.css';
 
-const ResourceCenter: React.FC = () => {
-  const [activeTab, setActiveTab] = useState('documents');
+const ResourceCenter = () => {
+  const [activeTab, setActiveTab] = useState<ResourceTab>('documents');
   const [searchTerm, setSearchTerm] = useState('');
-  const [isVisible, setIsVisible] = useState(false);
 
-  // 处理滚动渐入效果
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollPosition = window.scrollY;
-      
-      // 当页面滚动超过100px时显示内容
-      if (scrollPosition > 100) {
-        setIsVisible(true);
-      }
-    };
+  useIntersectionFadeIn({ selector: '.resource-list', visibleClass: 'fade-in' });
 
-    window.addEventListener('scroll', handleScroll);
-    // 初始检查
-    handleScroll();
-    
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
-
-  // 资源数据
-  const resources = {
+  const resources: Resources = {
     documents: [
       {
         title: '深聆科技产品技术规格书',
@@ -163,17 +145,73 @@ const ResourceCenter: React.FC = () => {
     ]
   };
 
-  // 过滤资源
-  const filteredResources = resources[activeTab as keyof typeof resources].filter(resource => 
+  const filteredResources = resources[activeTab].filter((resource) =>
     resource.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
     resource.description.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
+  const renderDownloadResource = (resource: DownloadResource, index: number) => (
+    <div key={index} className="resource-item">
+      <div className="resource-info">
+        <div className="resource-header-info">
+          <h3>{resource.title}</h3>
+          <span className="resource-category">{resource.category}</span>
+        </div>
+        <p className="resource-description">{resource.description}</p>
+        <div className="resource-meta">
+          <span className="resource-date">发布日期：{resource.date}</span>
+          <span className="resource-downloads">下载次数：{resource.downloadCount}</span>
+          <span className="resource-size">文件大小：{resource.fileSize}</span>
+        </div>
+      </div>
+      <div className="resource-actions">
+        <a href="#" className="btn btn-primary">下载资源</a>
+      </div>
+    </div>
+  );
+
+  const renderTutorialResource = (resource: TutorialResource, index: number) => (
+    <div key={index} className="resource-item">
+      <div className="resource-info">
+        <div className="resource-header-info">
+          <h3>{resource.title}</h3>
+          <span className="resource-category">{resource.category}</span>
+        </div>
+        <p className="resource-description">{resource.description}</p>
+        <div className="resource-meta">
+          <span className="resource-date">发布日期：{resource.date}</span>
+          <span className="resource-views">浏览次数：{resource.viewCount}</span>
+          <span className="resource-duration">时长：{resource.duration}</span>
+        </div>
+      </div>
+      <div className="resource-actions">
+        <a href="#" className="btn btn-primary">观看视频</a>
+      </div>
+    </div>
+  );
+
+  const renderCaseStudyResource = (resource: CaseStudyResource, index: number) => (
+    <div key={index} className="resource-item">
+      <div className="resource-info">
+        <div className="resource-header-info">
+          <h3>{resource.title}</h3>
+          <span className="resource-category">{resource.category}</span>
+        </div>
+        <p className="resource-description">{resource.description}</p>
+        <div className="resource-meta">
+          <span className="resource-date">发布日期：{resource.date}</span>
+          <span className="resource-views">浏览次数：{resource.viewCount}</span>
+        </div>
+      </div>
+      <div className="resource-actions">
+        <a href="#" className="btn btn-primary">查看详情</a>
+      </div>
+    </div>
+  );
+
   return (
+    <Layout>
     <div className="resource-center-page">
-      {/* 导航栏 */}
-      <Navbar />
-      
       {/* 页面标题 */}
       <section className="page-header">
         <div className="container">
@@ -232,95 +270,15 @@ const ResourceCenter: React.FC = () => {
           </div>
           
           {/* 资源列表 */}
-          <div className={`resource-list ${isVisible ? 'fade-in' : ''}`}>
+          <div className="resource-list">
             {filteredResources.length > 0 ? (
-              <>                
-                {activeTab === 'documents' && (
-                  filteredResources.map((resource: any, index) => (
-                    <div key={index} className="resource-item">
-                      <div className="resource-info">
-                        <div className="resource-header-info">
-                          <h3>{resource.title}</h3>
-                          <span className="resource-category">{resource.category}</span>
-                        </div>
-                        <p className="resource-description">{resource.description}</p>
-                        <div className="resource-meta">
-                          <span className="resource-date">发布日期：{resource.date}</span>
-                          <span className="resource-downloads">下载次数：{resource.downloadCount}</span>
-                          <span className="resource-size">文件大小：{resource.fileSize}</span>
-                        </div>
-                      </div>
-                      <div className="resource-actions">
-                        <a href="#" className="btn btn-primary">下载资源</a>
-                      </div>
-                    </div>
-                  ))
-                )}
-                
-                {activeTab === 'software' && (
-                  filteredResources.map((resource: any, index) => (
-                    <div key={index} className="resource-item">
-                      <div className="resource-info">
-                        <div className="resource-header-info">
-                          <h3>{resource.title}</h3>
-                          <span className="resource-category">{resource.category}</span>
-                        </div>
-                        <p className="resource-description">{resource.description}</p>
-                        <div className="resource-meta">
-                          <span className="resource-date">发布日期：{resource.date}</span>
-                          <span className="resource-downloads">下载次数：{resource.downloadCount}</span>
-                          <span className="resource-size">文件大小：{resource.fileSize}</span>
-                        </div>
-                      </div>
-                      <div className="resource-actions">
-                        <a href="#" className="btn btn-primary">下载资源</a>
-                      </div>
-                    </div>
-                  ))
-                )}
-                
-                {activeTab === 'tutorials' && (
-                  filteredResources.map((resource: any, index) => (
-                    <div key={index} className="resource-item">
-                      <div className="resource-info">
-                        <div className="resource-header-info">
-                          <h3>{resource.title}</h3>
-                          <span className="resource-category">{resource.category}</span>
-                        </div>
-                        <p className="resource-description">{resource.description}</p>
-                        <div className="resource-meta">
-                          <span className="resource-date">发布日期：{resource.date}</span>
-                          <span className="resource-views">浏览次数：{resource.viewCount}</span>
-                          <span className="resource-duration">时长：{resource.duration}</span>
-                        </div>
-                      </div>
-                      <div className="resource-actions">
-                        <a href="#" className="btn btn-primary">观看视频</a>
-                      </div>
-                    </div>
-                  ))
-                )}
-                
-                {activeTab === 'caseStudies' && (
-                  filteredResources.map((resource: any, index) => (
-                    <div key={index} className="resource-item">
-                      <div className="resource-info">
-                        <div className="resource-header-info">
-                          <h3>{resource.title}</h3>
-                          <span className="resource-category">{resource.category}</span>
-                        </div>
-                        <p className="resource-description">{resource.description}</p>
-                        <div className="resource-meta">
-                          <span className="resource-date">发布日期：{resource.date}</span>
-                          <span className="resource-views">浏览次数：{resource.viewCount}</span>
-                        </div>
-                      </div>
-                      <div className="resource-actions">
-                        <a href="#" className="btn btn-primary">查看详情</a>
-                      </div>
-                    </div>
-                  ))
-                )}
+              <>
+                {(activeTab === 'documents' || activeTab === 'software') &&
+                  (filteredResources as DownloadResource[]).map(renderDownloadResource)}
+                {activeTab === 'tutorials' &&
+                  (filteredResources as TutorialResource[]).map(renderTutorialResource)}
+                {activeTab === 'caseStudies' &&
+                  (filteredResources as CaseStudyResource[]).map(renderCaseStudyResource)}
               </>
             ) : (
               <div className="no-results">
@@ -418,73 +376,8 @@ const ResourceCenter: React.FC = () => {
           </div>
         </div>
       </section>
-      
-      {/* 页脚 */}
-      <footer className="footer">
-        <div className="container">
-          <div className="footer-content">
-            <div className="footer-column">
-              <h3>深聆科技</h3>
-              <p>可靠、省心的智能语音方案专家</p>
-              <div className="footer-social">
-                <a href="#" className="social-link">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M18 2H15C13.6739 2 12.4021 2.52678 11.4645 3.46447C10.5268 4.40215 10 5.67392 10 7V10H7V14H10V22H14V14H17L18 10H14V7C14 6.73478 14.1054 6.48043 14.2929 6.29289C14.4804 6.10536 14.7348 6 15 6H18V2Z" fill="currentColor"/>
-                  </svg>
-                </a>
-                <a href="#" className="social-link">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M10 13C10.5523 13 11 12.5523 11 12C11 11.4477 10.5523 11 10 11C9.44772 11 9 11.4477 9 12C9 12.5523 9.44772 13 10 13Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                    <path d="M14 13C14.5523 13 15 12.5523 15 12C15 11.4477 14.5523 11 14 11C13.4477 11 13 11.4477 13 12C13 12.5523 13.4477 13 14 13Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                    <path d="M4 6C4 5.44772 4.44772 5 5 5H19C19.5523 5 20 5.44772 20 6V18C20 18.5523 19.5523 19 19 19H5C4.44772 19 4 18.5523 4 18V6Z" stroke="currentColor" strokeWidth="2"/>
-                    <path d="M16 11H8" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
-                  </svg>
-                </a>
-                <a href="#" className="social-link">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 22V12M12 12L5 19M12 12L19 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                    <path d="M21 15V5C21 3.89543 20.1046 3 19 3H5C3.89543 3 3 3.89543 3 5V15" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
-                  </svg>
-                </a>
-              </div>
-            </div>
-            
-            <div className="footer-column">
-              <h4>产品与服务</h4>
-              <ul className="footer-links">
-                <li><a href="/solutions/software-solution">软件算法方案</a></li>
-                <li><a href="/solutions/intelligent-hardware">智能硬件方案</a></li>
-                <li><a href="/solutions/device-cloud">设备云平台方案</a></li>
-                <li><a href="/products">智能产品</a></li>
-              </ul>
-            </div>
-            
-            <div className="footer-column">
-              <h4>关于我们</h4>
-              <ul className="footer-links">
-                <li><a href="/about/company">公司简介</a></li>
-                <li><a href="/about/team">团队介绍</a></li>
-                {/* <li><a href="/about/news">新闻动态</a></li> */}
-                <li><a href="/about/contact">联系我们</a></li>
-              </ul>
-            </div>
-            
-            <div className="footer-column">
-              <h4>联系我们</h4>
-              <ul className="footer-contact">
-                <li>地址：浙江省杭州市滨江区越达巷82号房天下大厦</li>
-                <li>电话：18626895139</li>
-                <li>邮箱：support@deeplisten.cn</li>
-              </ul>
-            </div>
-          </div>
-          
-          <div className="footer-bottom">
-            <p>© 2025 浙江深聆科技有限公司 保留所有权利. <a href="https://beian.miit.gov.cn/" target="_blank">浙ICP备2025193072号-1</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://beian.mps.gov.cn/#/query/webSearch?code=33011302000843" target="_blank">浙公网安备33011302000843号</a></p>
-          </div>
-        </div>
-      </footer>
     </div>
+    </Layout>
   );
 };
 
