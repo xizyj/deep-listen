@@ -11,6 +11,7 @@ const SoftwareSolution = () => {
   useIntersectionFadeIn({
     selector: '.overview-content, .features-content, .applications-content, .technical-content',
     visibleClass: 'fade-in',
+    deps: [activeTab],
   });
 
   return (
@@ -61,11 +62,12 @@ const SoftwareSolution = () => {
             {activeTab === 'overview' && (
               <div className="overview-content">
                 <div className="overview-main">
-                  <img 
-                    src="/images/tech-bg-1920x1080.svg" 
-                    alt="软件算法方案" 
-                    className="overview-image"
-                  />
+                  <div className="overview-image">
+                    <img
+                      src="/images/tech-bg-1920x1080.svg"
+                      alt="软件算法方案"
+                    />
+                  </div>
                   <div className="overview-text">
                     <h2>方案概述</h2>
                     <p>

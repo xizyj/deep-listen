@@ -126,7 +126,7 @@ const IndustryApplications = () => {
       </div>
 
       {/* 主要内容 */}
-      <div className="applications-content">
+      <div className="industry-applications-content">
         <div className="container">
           {/* 行业导航 */}
           <div className="industry-nav">

@@ -52,13 +52,13 @@
 }
 
 /* 主要内容 */
-.applications-content {
+.industry-applications-content {
   flex: 1;
   padding: 60px 0;
   background-color: #f8f9fa;
 }
 
-.applications-content .container {
+.industry-applications-content .container {
   max-width: 1400px;
   margin: 0 auto;
   padding: 0 20px;
@@ -512,12 +512,13 @@
 
 
 /* 滚动渐入效果 */
-.fade-in-section {
+.industry-applications-page .fade-in-section {
+  opacity: 0;
   transform: translateY(30px);
   transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
-.fade-in-section.show {
+.industry-applications-page .fade-in-section.show {
   opacity: 1;
   transform: translateY(0);
 }

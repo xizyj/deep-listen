@@ -4,12 +4,14 @@ interface UseIntersectionFadeInOptions {
   selector?: string
   visibleClass?: string
   threshold?: number
+  deps?: unknown[]
 }
 
 export function useIntersectionFadeIn({
   selector = '.fade-in-section',
   visibleClass = 'fade-in',
   threshold = 0.1,
+  deps = [],
 }: UseIntersectionFadeInOptions = {}) {
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -28,5 +30,6 @@ export function useIntersectionFadeIn({
     elements.forEach((element) => observer.observe(element))
 
     return () => observer.disconnect()
-  }, [selector, visibleClass, threshold])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [selector, visibleClass, threshold, ...deps])
 }

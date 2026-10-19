@@ -1,5 +1,6 @@
 /* 软件算法方案页面样式 */
 .software-solution-page {
+  overflow-x: hidden;
 }
 
 /* 页面标题 */
@@ -72,13 +73,19 @@
 }
 
 /* 方案概述 */
-.overview-content {
+.software-solution-page .overview-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.software-solution-page .overview-content {
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
-.overview-content.fade-in {
+.software-solution-page .overview-content.fade-in {
   opacity: 1;
   transform: translateY(0);
 }
@@ -87,18 +94,29 @@
   display: flex;
   gap: 40px;
   margin-bottom: 60px;
+  align-items: flex-start;
 }
 
 .overview-image {
   flex: 1;
+  min-width: 0;
   max-height: 400px;
-  object-fit: cover;
+  overflow: hidden;
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
+.overview-image img {
+  width: 100%;
+  height: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  display: block;
+}
+
 .overview-text {
   flex: 1;
+  min-width: 0;
 }
 
 .overview-text h2 {
@@ -157,13 +175,13 @@
 }
 
 /* 核心特性 */
-.features-content {
+.software-solution-page .features-content {
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
-.features-content.fade-in {
+.software-solution-page .features-content.fade-in {
   opacity: 1;
   transform: translateY(0);
 }
@@ -181,6 +199,9 @@
 
 .feature-image {
   flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  border-radius: 8px;
 }
 
 .feature-image img {
@@ -188,6 +209,7 @@
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
+  display: block;
 }
 
 .feature-section:hover .feature-image img {
@@ -196,6 +218,7 @@
 
 .feature-text {
   flex: 1;
+  min-width: 0;
 }
 
 .feature-text h3 {
@@ -237,12 +260,13 @@
 }
 
 /* 应用场景 */
-.applications-content {
+.software-solution-page .applications-content {
+  opacity: 0;
   transform: translateY(20px);
   transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
-.applications-content.fade-in {
+.software-solution-page .applications-content.fade-in {
   opacity: 1;
   transform: translateY(0);
 }
@@ -299,13 +323,13 @@
 }
 
 /* 技术参数 */
-.technical-content {
+.software-solution-page .technical-content {
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
-.technical-content.fade-in {
+.software-solution-page .technical-content.fade-in {
   opacity: 1;
   transform: translateY(0);
 }
