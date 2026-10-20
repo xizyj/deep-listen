@@ -9,7 +9,7 @@ const Footer = () => {
         <div className="footer-content">
           <div className="footer-column">
             <h3>深聆科技</h3>
-            <p>可靠、省心的智能语音方案专家</p>
+            <p>离线语音识别模块与语音方案商</p>
             <div className="footer-social">
               <a href="#" className="social-link" aria-label="Facebook">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -35,9 +35,12 @@ const Footer = () => {
             <h4>产品与服务</h4>
             <ul className="footer-links">
               <li><Link to={ROUTES.solutions}>解决方案</Link></li>
+              <li><Link to={ROUTES.scenarios}>场景方案</Link></li>
+              <li><Link to={ROUTES.insights}>技术文章</Link></li>
               <li><Link to={ROUTES.products}>智能产品</Link></li>
               <li><Link to={ROUTES.industryApplications}>行业应用</Link></li>
               <li><Link to={ROUTES.resourceCenter}>资源中心</Link></li>
+              <li><Link to={ROUTES.contact}>询价 / 定制</Link></li>
             </ul>
           </div>
 

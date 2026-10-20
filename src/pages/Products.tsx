@@ -56,7 +56,7 @@ const Products = () => {
         <div className="page-header">
           <div className="container">
             <h1>智能产品</h1>
-            <p>为您提供全方位的智能硬件产品，从模组到整机，满足不同场景的智能化需求</p>
+            <p>语音门锁、遥控器、风扇、面板与拾音器等，覆盖家电与家居的离线语音控制需求</p>
           </div>
         </div>
 

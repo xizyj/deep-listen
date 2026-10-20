@@ -121,7 +121,7 @@ const IndustryApplications = () => {
       <div className="page-header">
         <div className="container">
           <h1>行业应用</h1>
-          <p>为不同行业提供定制化的智能解决方案，助力产业数字化转型和智能化升级</p>
+          <p>离线语音识别与语音控制已落地智能家居家电、工业、安防与消费电子；厨电场景可参见浴霸 / 油烟机 / 风扇方案页</p>
         </div>
       </div>
 

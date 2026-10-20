@@ -13,6 +13,10 @@ import News from './pages/about/News'
 import SoftwareSolution from './pages/solutions/SoftwareSolution'
 import DeviceCloudPlatformSolution from './pages/solutions/DeviceCloudPlatformSolution'
 import IntelligentHardwareSolution from './pages/solutions/IntelligentHardwareSolution'
+import Scenarios from './pages/Scenarios'
+import ScenarioDetail from './pages/ScenarioDetail'
+import Insights from './pages/Insights'
+import InsightDetail from './pages/InsightDetail'
 
 function AppRoutes() {
   const location = useLocation()
@@ -27,6 +31,10 @@ function AppRoutes() {
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/industry-applications" element={<IndustryApplications />} />
+      <Route path="/scenarios" element={<Scenarios />} />
+      <Route path="/scenarios/:slug" element={<ScenarioDetail />} />
+      <Route path="/insights" element={<Insights />} />
+      <Route path="/insights/:slug" element={<InsightDetail />} />
       <Route path="/products" element={<Products />} />
       <Route path="/resource-center" element={<ResourceCenter />} />
       <Route path="/solutions" element={<Solutions />} />

@@ -1,6 +1,19 @@
 import Layout from '../components/Layout';
 import '../styles/Contact.css';
 
+/** 房天下大厦（越达巷82号）坐标，GCJ-02 / 高德 */
+const OFFICE = {
+  name: '深聆科技',
+  address: '浙江省杭州市滨江区越达巷82号房天下大厦',
+  lng: 120.1869,
+  lat: 30.1889,
+}
+
+const amapUrl = `https://uri.amap.com/marker?position=${OFFICE.lng},${OFFICE.lat}&name=${encodeURIComponent(OFFICE.name)}&src=deeplisten&coordinate=gaode&callnative=1`
+const baiduUrl = `https://api.map.baidu.com/marker?location=${OFFICE.lat},${OFFICE.lng}&title=${encodeURIComponent(OFFICE.name)}&content=${encodeURIComponent(OFFICE.address)}&output=html&coord_type=gcj02&src=deeplisten`
+/** OpenStreetMap 嵌入（无需 Key，国内可访问；坐标按展示用） */
+const osmEmbedUrl = `https://www.openstreetmap.org/export/embed.html?bbox=${OFFICE.lng - 0.012}%2C${OFFICE.lat - 0.008}%2C${OFFICE.lng + 0.012}%2C${OFFICE.lat + 0.008}&layer=mapnik&marker=${OFFICE.lat}%2C${OFFICE.lng}`
+
 const Contact = () => {
   return (
     <Layout>
@@ -8,10 +21,29 @@ const Contact = () => {
       {/* 页面头部 */}
       <header className="page-header">
         <div className="container">
-          <h1>联系我们</h1>
-          <p>如有任何问题或需求，请随时与我们联系</p>
+          <h1>询价 / 定制开发</h1>
+          <p>离线语音模块价格、打样、MOQ 与开发周期——说明产品场景与接口需求，我们反馈报价区间与交期</p>
         </div>
       </header>
+
+      <section className="contact-info-section fade-in-section visible">
+        <div className="container">
+          <div className="contact-info-grid" style={{ marginBottom: 8 }}>
+            <div className="contact-info-item">
+              <h3>标准模块打样</h3>
+              <p>常见约 2 周出样，具体以规格与唤醒词定制为准</p>
+            </div>
+            <div className="contact-info-item">
+              <h3>报价与 MOQ</h3>
+              <p>按模块规格与用量给价格区间与起订量，不兜圈子</p>
+            </div>
+            <div className="contact-info-item">
+              <h3>OEM / ODM</h3>
+              <p>支持语音方案定制、烧录贴片与量产交付协作</p>
+            </div>
+          </div>
+        </div>
+      </section>
       
       {/* 联系信息 */}
       <section className="contact-info-section fade-in-section visible">
@@ -50,61 +82,28 @@ const Contact = () => {
         </div>
       </section>
       
-      {/* 联系表单 */}
-      <section className="contact-form-section fade-in-section visible">
-        <div className="container">
-          <div className="form-container">
-            <h2>发送消息</h2>
-            <form className="contact-form">
-              <div className="form-row">
-                <div className="form-group">
-                  <label htmlFor="name">姓名</label>
-                  <input type="text" id="name" name="name" placeholder="请输入您的姓名" required/>
-                </div>
-                <div className="form-group">
-                  <label htmlFor="email">邮箱</label>
-                  <input type="email" id="email" name="email" placeholder="请输入您的邮箱" required/>
-                </div>
-              </div>
-              <div className="form-row">
-                <div className="form-group">
-                  <label htmlFor="phone">电话</label>
-                  <input type="tel" id="phone" name="phone" placeholder="请输入您的电话"/>
-                </div>
-                <div className="form-group">
-                  <label htmlFor="subject">主题</label>
-                  <select id="subject" name="subject" required>
-                    <option value="">请选择主题</option>
-                    <option value="product">产品咨询</option>
-                    <option value="cooperation">商务合作</option>
-                    <option value="support">技术支持</option>
-                    <option value="other">其他问题</option>
-                  </select>
-                </div>
-              </div>
-              <div className="form-group">
-                <label htmlFor="message">留言内容</label>
-                <textarea id="message" name="message" rows={5} placeholder="请输入您的留言内容" required></textarea>
-              </div>
-              <button type="submit" className="btn btn-primary">提交留言</button>
-            </form>
-          </div>
-        </div>
-      </section>
-      
       {/* 地图 */}
-      <section className="map-section fade-in-section visible">
+      <section className="map-section">
         <div className="container">
+          <h2 className="map-title">公司位置</h2>
+          <p className="map-address">{OFFICE.address}</p>
           <div className="map-container">
-            {/* 这里可以嵌入地图，暂时用占位符 */}
-            <div className="map-placeholder">
-              <svg width="100%" height="400" viewBox="0 0 800 400" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <rect width="800" height="400" fill="#f0f0f0"/>
-                <circle cx="400" cy="200" r="10" fill="#e74c3c"/>
-                <circle cx="400" cy="200" r="30" stroke="#e74c3c" strokeWidth="2" strokeDasharray="5 5"/>
-                <text x="400" y="260" textAnchor="middle" fontSize="16" fill="#333">浙江省杭州市滨江区越达巷82号房天下大厦</text>
-              </svg>
-            </div>
+            <iframe
+              title={`${OFFICE.name}位置地图`}
+              className="map-iframe"
+              src={osmEmbedUrl}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              allowFullScreen
+            />
+          </div>
+          <div className="map-actions">
+            <a href={amapUrl} target="_blank" rel="noopener noreferrer" className="btn btn-primary">
+              高德地图导航
+            </a>
+            <a href={baiduUrl} target="_blank" rel="noopener noreferrer" className="btn map-btn-secondary">
+              百度地图导航
+            </a>
           </div>
         </div>
       </section>
@@ -115,7 +114,7 @@ const Contact = () => {
           <div className="consultation-content">
             <h2>需要专业的业务咨询？</h2>
             <p>我们的专业团队随时为您提供咨询和支持，帮助您选择最适合的解决方案。</p>
-            <a href="#" className="btn btn-primary">预约咨询</a>
+            <a href="tel:18626895139" className="btn btn-primary">电话咨询 18626895139</a>
           </div>
         </div>
       </section>

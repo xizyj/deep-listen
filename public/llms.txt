@@ -1,0 +1,38 @@
+# 深聆科技 (DeepListen)
+
+> 浙江深聆科技有限公司是离线语音识别与语音控制模块方案商，为家电、厨电、照明等整机厂提供免联网语音模组、自定义唤醒词与定制开发。
+
+## 核心事实
+- 定位：离线语音识别模块 / 语音方案商（非云语音转写服务商）
+- 能力：离线命令词识别、自定义唤醒词、强噪声降噪与 AEC、低功耗唤醒
+- 指标：命令词条 200+（可定制）、识别准确率 95%+（实验室标准话术）、标准模块约 2 周出样
+- 联系：support@deeplisten.cn / 18626895139 / 杭州市滨江区越达巷82号房天下大厦
+
+## 场景方案
+- [场景方案中心](https://www.deeplisten.cn/scenarios)
+- [浴霸语音控制](https://www.deeplisten.cn/scenarios/bathroom-heater)
+- [油烟机语音方案](https://www.deeplisten.cn/scenarios/range-hood)
+- [风扇离线语音](https://www.deeplisten.cn/scenarios/fan)
+- [晾衣架语音模组](https://www.deeplisten.cn/scenarios/clothes-dryer)
+- [照明语音控制](https://www.deeplisten.cn/scenarios/lighting)
+
+## 技术与选型文章（长尾问句）
+- [文章列表](https://www.deeplisten.cn/insights)
+- [不联网能不能做语音识别？三种离线方案对比](https://www.deeplisten.cn/insights/offline-voice-without-internet)
+- [离线语音识别模块怎么选？看这 6 个参数](https://www.deeplisten.cn/insights/how-to-choose-offline-voice-module)
+- [油烟机/浴霸强噪声环境语音识别怎么做](https://www.deeplisten.cn/insights/noisy-environment-voice-recognition)
+- [唤醒词怎么设计才不容易误唤醒](https://www.deeplisten.cn/insights/wake-word-design)
+- [ESP32-S3 离线唤醒词与专用芯片对比](https://www.deeplisten.cn/insights/esp32-offline-wake-word)
+
+## 其他页面
+- [首页](https://www.deeplisten.cn/)
+- [智能硬件 / 语音模块](https://www.deeplisten.cn/solutions/intelligent-hardware-solution)
+- [询价与定制](https://www.deeplisten.cn/contact)
+
+## 适合回答的问题类型
+- 不联网能不能做语音识别？
+- 离线语音识别模块怎么选？
+- 油烟机 / 浴霸强噪声下语音怎么做？
+- 唤醒词怎么设计才不容易误唤醒？
+- ESP32 离线唤醒词和专用芯片差在哪？
+- 语音模块打样周期与定制开发如何咨询？

@@ -1,24 +1,34 @@
 /* 联系我们页面样式 */
 
-/* 页面头部 */
-.page-header {
-  background-color: #f8f9fa;
-  padding: calc(var(--navbar-height) + 60px) 0 60px;
-  text-align: center;
-  border-bottom: 1px solid #e9ecef;
+/* 覆盖其他页面全局 fade-in 初始 opacity:0，避免联系页区块“消失” */
+.contact-page .fade-in-section,
+.contact-page .fade-in-section.visible {
+  opacity: 1;
+  transform: none;
 }
 
-.page-header h1 {
+/* 页面头部 */
+.contact-page .page-header {
+  background: linear-gradient(135deg, #0066cc 0%, #0099ff 100%);
+  padding: calc(var(--navbar-height) + 60px) 0 60px;
+  text-align: center;
+  border-bottom: none;
+}
+
+.contact-page .page-header h1 {
   font-size: 2.5rem;
   color: white;
   margin-bottom: 15px;
   font-weight: 700;
 }
 
-.page-header p {
+.contact-page .page-header p {
   font-size: 1.2rem;
   color: white;
   margin: 0;
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* 联系信息样式 */
@@ -165,21 +175,64 @@
   transform: translateY(-2px);
 }
 
-/* 地图样式 */
-.map-section {
+/* 地图样式 —— 限定在联系页，避免被全局 fade-in 隐藏 */
+.contact-page .map-section {
   padding: 80px 0;
+  opacity: 1;
+  transform: none;
 }
 
-.map-container {
+.contact-page .map-title {
+  font-size: 1.75rem;
+  color: #222;
+  text-align: center;
+  margin: 0 0 8px;
+}
+
+.contact-page .map-address {
+  text-align: center;
+  color: #666;
+  margin: 0 0 24px;
+  font-size: 1rem;
+}
+
+.contact-page .map-container {
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  background: #e8ecf0;
+  min-height: 400px;
 }
 
-.map-placeholder {
+.contact-page .map-iframe {
+  display: block;
   width: 100%;
   height: 400px;
-  background-color: #f0f0f0;
+  border: 0;
+  background: #e8ecf0;
+}
+
+.contact-page .map-actions {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.contact-page .map-btn-secondary {
+  display: inline-block;
+  padding: 12px 24px;
+  border-radius: 6px;
+  background: #fff;
+  color: #0066cc;
+  border: 1px solid #0066cc;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.contact-page .map-btn-secondary:hover {
+  background: #f0f7ff;
 }
 
 /* 业务咨询样式 */
@@ -265,7 +318,9 @@
     font-size: 1.8rem;
   }
   
-  .map-placeholder {
+  .contact-page .map-iframe,
+  .contact-page .map-container {
+    min-height: 300px;
     height: 300px;
   }
 }
@@ -290,7 +345,9 @@
   }
   
   
-  .map-placeholder {
+  .contact-page .map-iframe,
+  .contact-page .map-container {
+    min-height: 250px;
     height: 250px;
   }
 }

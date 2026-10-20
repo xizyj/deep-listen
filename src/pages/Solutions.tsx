@@ -10,8 +10,8 @@ const Solutions = () => {
       {/* 页面标题 */}
       <section className="page-header">
         <div className="container">
-          <h1>解决方案</h1>
-          <p>为不同行业提供定制化的智能语音解决方案</p>
+          <h1>离线语音解决方案</h1>
+          <p>算法、离线语音模块与设备云平台——按「产品加语音控制」与定制开发意图承接</p>
         </div>
       </section>
       

@@ -30,6 +30,28 @@ const Navbar = () => {
       ],
     },
     {
+      title: '场景方案',
+      path: ROUTES.scenarios,
+      subMenus: [
+        { title: '浴霸语音控制', path: ROUTES.scenarioBathroomHeater },
+        { title: '油烟机语音方案', path: ROUTES.scenarioRangeHood },
+        { title: '风扇离线语音', path: ROUTES.scenarioFan },
+        { title: '晾衣架语音模组', path: ROUTES.scenarioClothesDryer },
+        { title: '照明语音控制', path: ROUTES.scenarioLighting },
+      ],
+    },
+    {
+      title: '技术文章',
+      path: ROUTES.insights,
+      subMenus: [
+        { title: '不联网语音识别', path: '/insights/offline-voice-without-internet' },
+        { title: '离线语音模块怎么选', path: '/insights/how-to-choose-offline-voice-module' },
+        { title: '强噪声语音识别', path: '/insights/noisy-environment-voice-recognition' },
+        { title: '唤醒词怎么设计', path: '/insights/wake-word-design' },
+        { title: 'ESP32 离线唤醒词', path: '/insights/esp32-offline-wake-word' },
+      ],
+    },
+    {
       title: '智能产品',
       path: ROUTES.products,
       subMenus: [

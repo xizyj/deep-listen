@@ -22,34 +22,34 @@ const Carousel = () => {
   const intervalRef = useRef<number | null>(null);
   const autoplayMs = 5000;
 
-  // 轮播图数据
+  // 轮播：使用检索侧真实语言（离线语音模块 / 场景方案），避免「端侧 AI」等内部品类词
   const carouselItems: CarouselItem[] = [
     {
       id: 1,
-      title: '可靠、省心的智能语音方案专家',
-      subtitle: '专注打磨，迭代升级，品质可靠',
-      description: '专注于智能语音交互技术的研发与应用，为您提供全方位的语音解决方案',
+      title: '离线语音识别与语音方案商',
+      subtitle: '免联网语音模块 · 自定义唤醒词 · 约 2 周出样',
+      description: '为家电、厨电、照明整机厂提供离线语音模块与定制开发，断网可用、数据不上云',
       image: '/images/lunbo3.jpeg',
-      buttonText: '了解更多',
-      buttonLink: '/solutions'
+      buttonText: '咨询方案',
+      buttonLink: '/contact'
     },
     {
       id: 2,
-      title: '引领AI语音交互新时代',
-      subtitle: '自主研发核心算法，赋能智能设备',
-      description: '从芯片到算法，从软件到硬件，一站式语音交互解决方案提供商',
+      title: '离线语音模块，快速挂载主控',
+      subtitle: 'UART 等常见接口 · 低功耗 · 可量产',
+      description: '串口语音模块与嵌入式语音模组选型，减少重画板成本，从打样到量产一站交付',
       image: '/images/lunbo2.jpeg',
-      buttonText: '探索产品',
-      buttonLink: '/products'
+      buttonText: '硬件方案',
+      buttonLink: '/solutions/intelligent-hardware-solution'
     },
     {
       id: 3,
-      title: '让万物听懂你的声音',
-      subtitle: '多场景适配，多语言支持',
-      description: '中文语音识别、外文语音识别、特定声音识别，满足不同场景需求',
+      title: '浴霸 / 油烟机 / 风扇语音方案',
+      subtitle: '强噪声场景落地 · 开孔与指令集可参考',
+      description: '按场景交付离线语音控制：噪声特征、结构建议与典型指令，便于硬件与产品评估',
       image: '/images/lunbo1.jpeg',
-      buttonText: '应用案例',
-      buttonLink: '/industry-applications'
+      buttonText: '场景方案',
+      buttonLink: '/scenarios'
     }
   ];
 

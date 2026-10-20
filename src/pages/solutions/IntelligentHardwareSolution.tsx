@@ -12,8 +12,8 @@ const IntelligentHardwareSolution = () => {
       {/* 页面标题 */}
       <div className="page-header">
         <div className="container">
-          <h1>智能硬件方案</h1>
-          <p>为您提供一体化的智能硬件方案，从芯片到系统的完整技术支持</p>
+          <h1>离线语音模块 / 智能硬件方案</h1>
+          <p>语音识别模块与语音控制模块选型：接口、功耗、词条与量产交付，便于整机快速挂载离线语音</p>
         </div>
       </div>
 
