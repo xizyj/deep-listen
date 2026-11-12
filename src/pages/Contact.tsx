@@ -1,12 +1,12 @@
 import Layout from '../components/Layout';
 import '../styles/Contact.css';
 
-/** 房天下大厦（越达巷82号）坐标，GCJ-02 / 高德 */
+/** 滨河路17号1幢（临安青山湖）坐标，GCJ-02 / 高德 */
 const OFFICE = {
   name: '深聆科技',
-  address: '浙江省杭州市滨江区越达巷82号房天下大厦',
-  lng: 120.1869,
-  lat: 30.1889,
+  address: '浙江省杭州市临安区青山湖街道滨河路17号1幢2216室',
+  lng: 119.8436,
+  lat: 30.2463,
 }
 
 const amapUrl = `https://uri.amap.com/marker?position=${OFFICE.lng},${OFFICE.lat}&name=${encodeURIComponent(OFFICE.name)}&src=deeplisten&coordinate=gaode&callnative=1`
@@ -56,7 +56,7 @@ const Contact = () => {
                 </svg>
               </div>
               <h3>公司地址</h3>
-              <p>浙江省杭州市滨江区越达巷82号房天下大厦</p>
+              <p>浙江省杭州市临安区青山湖街道滨河路17号1幢2216室</p>
             </div>
             <div className="contact-info-item">
               <div className="contact-icon">

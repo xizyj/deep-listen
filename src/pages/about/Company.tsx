@@ -48,7 +48,7 @@ const Company = () => {
         <div className="container">
           <h2>联系我们</h2>
           <div className="contact-info">
-            <p>地址：浙江省杭州市滨江区越达巷82号房天下大厦</p>
+            <p>地址：浙江省杭州市临安区青山湖街道滨河路17号1幢2216室</p>
             <p>电话：18626895139</p>
             <p>邮箱：support@deeplisten.cn</p>
           </div>

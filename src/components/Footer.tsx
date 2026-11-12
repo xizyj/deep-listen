@@ -56,7 +56,7 @@ const Footer = () => {
           <div className="footer-column">
             <h4>联系我们</h4>
             <ul className="footer-contact">
-              <li>地址：浙江省杭州市滨江区越达巷82号房天下大厦</li>
+              <li>地址：浙江省杭州市临安区青山湖街道滨河路17号1幢2216室</li>
               <li>电话：18626895139</li>
               <li>邮箱：support@deeplisten.cn</li>
             </ul>

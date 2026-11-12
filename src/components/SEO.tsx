@@ -37,8 +37,8 @@ function buildOrganizationSchema() {
     },
     address: {
       '@type': 'PostalAddress',
-      streetAddress: '越达巷82号房天下大厦',
-      addressLocality: '杭州市滨江区',
+      streetAddress: '青山湖街道滨河路17号1幢2216室',
+      addressLocality: '杭州市临安区',
       addressRegion: '浙江省',
       addressCountry: 'CN',
     },
