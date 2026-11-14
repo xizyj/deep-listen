@@ -1,0 +1,321 @@
+.side-tools-bar {
+  position: fixed;
+  right: 18px;
+  top: 55%;
+  transform: translateY(-50%);
+  z-index: 990;
+}
+
+.side-tools-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background: #fff;
+  border: 1px solid rgba(58, 90, 136, 0.16);
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(20, 32, 51, 0.12);
+  display: flex;
+  flex-direction: column;
+  overflow: visible;
+}
+
+.side-tool-item {
+  position: relative;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.side-tool-item:last-child {
+  border-bottom: none;
+}
+
+.side-tool-item > a,
+.side-tool-item > button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 68px;
+  height: 66px;
+  padding: 8px 4px;
+  color: #475569;
+  text-decoration: none;
+  background: #fff;
+  border: none;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background-color 0.25s ease, color 0.25s ease;
+  box-sizing: border-box;
+}
+
+.side-tool-item:first-child > a,
+.side-tool-item:first-child > button {
+  border-top-left-radius: 11px;
+  border-top-right-radius: 11px;
+}
+
+.side-tool-item:last-child > a,
+.side-tool-item:last-child > button {
+  border-bottom-left-radius: 11px;
+  border-bottom-right-radius: 11px;
+}
+
+.side-tool-brand > a {
+  background: linear-gradient(135deg, #243652 0%, #3a5a88 100%);
+  color: #fff;
+}
+
+.side-tool-brand > a:hover {
+  color: #fff;
+  background: linear-gradient(135deg, #1b2940 0%, #314e78 100%);
+}
+
+.side-brand-icon {
+  margin-bottom: 2px;
+  color: #9ec5ef;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.side-tool-brand .side-tool-txt {
+  color: #fff;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.side-tool-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  margin-bottom: 2px;
+  color: #3a5a88;
+  transition: transform 0.25s ease, color 0.25s ease;
+}
+
+.side-tool-txt {
+  font-size: 11.5px;
+  font-weight: 600;
+  line-height: 1.2;
+  color: #475569;
+  transition: color 0.25s ease;
+}
+
+.side-tool-item:not(.side-tool-brand) > a:hover,
+.side-tool-item:not(.side-tool-brand) > button:hover,
+.side-tool-item.is-open > button {
+  background-color: #3a5a88;
+  color: #fff;
+}
+
+.side-tool-item:not(.side-tool-brand) > a:hover .side-tool-icon,
+.side-tool-item:not(.side-tool-brand) > button:hover .side-tool-icon,
+.side-tool-item.is-open > button .side-tool-icon {
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.side-tool-item:not(.side-tool-brand) > a:hover .side-tool-txt,
+.side-tool-item:not(.side-tool-brand) > button:hover .side-tool-txt,
+.side-tool-item.is-open > button .side-tool-txt {
+  color: #fff;
+}
+
+.side-tool-item > a:focus-visible,
+.side-tool-item > button:focus-visible,
+.side-tools-bar .contact-chip:focus-visible {
+  outline: 2px solid #3a5a88;
+  outline-offset: -2px;
+}
+
+.side-popover-box {
+  position: absolute;
+  right: calc(100% + 12px);
+  top: 50%;
+  transform: translateY(-50%) translateX(10px);
+  background: #fff;
+  border-radius: 10px;
+  border: 1px solid rgba(58, 90, 136, 0.16);
+  box-shadow: 0 12px 36px rgba(20, 32, 51, 0.16);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.25s cubic-bezier(0.16, 1, 0.3, 1), transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.25s;
+  z-index: 1000;
+  text-align: left;
+}
+
+.side-popover-box::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: -16px;
+  width: 16px;
+}
+
+.side-popover-box::after {
+  content: '';
+  position: absolute;
+  right: -6px;
+  top: 50%;
+  transform: translateY(-50%) rotate(45deg);
+  width: 12px;
+  height: 12px;
+  background: #fff;
+  border-right: 1px solid rgba(58, 90, 136, 0.16);
+  border-top: 1px solid rgba(58, 90, 136, 0.16);
+}
+
+.side-tool-item:hover .side-popover-box,
+.side-tool-item:focus-within .side-popover-box,
+.side-tool-item.is-open .side-popover-box {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(-50%) translateX(0);
+}
+
+.popover-wechat {
+  width: 188px;
+  padding: 16px 14px;
+  text-align: center;
+}
+
+.popover-mail,
+.popover-phone {
+  width: 248px;
+  padding: 16px 14px;
+}
+
+.popover-qr {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 6px;
+  display: inline-block;
+  margin-bottom: 8px;
+}
+
+.popover-qr img {
+  display: block;
+  width: 140px;
+  height: 140px;
+  object-fit: contain;
+}
+
+.popover-hint {
+  font-size: 12px;
+  color: #3a5a88;
+  font-weight: 600;
+}
+
+.popover-header {
+  margin-bottom: 10px;
+}
+
+.popover-title {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.popover-sub {
+  font-size: 12px;
+  color: #64748b;
+  margin-top: 2px;
+  line-height: 1.4;
+}
+
+.side-tools-bar .contact-chip {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  padding: 9px 12px;
+  text-decoration: none;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.side-tools-bar .contact-chip:hover {
+  background: #eef3f8;
+  border-color: #c5d4e8;
+}
+
+.contact-chip-label {
+  font-size: 12px;
+  color: #64748b;
+  flex-shrink: 0;
+}
+
+.contact-chip-value {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #3a5a88;
+  letter-spacing: 0.2px;
+}
+
+@media (max-width: 768px) {
+  .side-tools-bar {
+    right: 12px;
+    bottom: calc(24px + env(safe-area-inset-bottom));
+    top: auto;
+    transform: none;
+  }
+
+  .side-tool-brand,
+  .side-tool-mail,
+  .side-tool-online {
+    display: none;
+  }
+
+  .side-tool-item > a,
+  .side-tool-item > button {
+    width: 44px;
+    height: 44px;
+    padding: 0;
+  }
+
+  .side-tool-txt {
+    display: none;
+  }
+
+  .side-tool-icon {
+    margin: 0;
+  }
+
+  .popover-phone {
+    width: min(248px, calc(100vw - 84px));
+  }
+
+  .side-tool-wechat .side-popover-box {
+    top: auto;
+    bottom: 0;
+    transform: translateX(10px);
+  }
+
+  .side-tool-wechat:hover .side-popover-box,
+  .side-tool-wechat:focus-within .side-popover-box,
+  .side-tool-wechat.is-open .side-popover-box {
+    transform: translateX(0);
+  }
+
+  .side-tool-wechat .side-popover-box::after {
+    top: auto;
+    bottom: 16px;
+    transform: rotate(45deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .side-popover-box,
+  .side-tool-icon,
+  .side-tool-item > a,
+  .side-tool-item > button {
+    transition: none;
+  }
+}
