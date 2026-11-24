@@ -5,6 +5,7 @@ export const ROUTES = {
   intelligentHardwareSolution: '/solutions/intelligent-hardware-solution',
   deviceCloudPlatformSolution: '/solutions/device-cloud-platform-solution',
   products: '/products',
+  microphoneArray: '/products/microphone-array',
   industryApplications: '/industry-applications',
   scenarios: '/scenarios',
   scenarioBathroomHeater: '/scenarios/bathroom-heater',

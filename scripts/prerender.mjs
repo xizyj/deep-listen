@@ -39,6 +39,7 @@ const routes = [
   '/insights/wake-word-design',
   '/insights/esp32-offline-wake-word',
   '/products',
+  '/products/microphone-array',
   '/industry-applications',
   '/resource-center',
   '/about/company',

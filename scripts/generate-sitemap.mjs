@@ -23,6 +23,7 @@ const routes = [
   { path: '/insights/wake-word-design', priority: '0.85', changefreq: 'monthly' },
   { path: '/insights/esp32-offline-wake-word', priority: '0.85', changefreq: 'monthly' },
   { path: '/products', priority: '0.9', changefreq: 'weekly' },
+  { path: '/products/microphone-array', priority: '0.85', changefreq: 'monthly' },
   { path: '/industry-applications', priority: '0.8', changefreq: 'monthly' },
   { path: '/resource-center', priority: '0.7', changefreq: 'monthly' },
   { path: '/about/company', priority: '0.7', changefreq: 'monthly' },

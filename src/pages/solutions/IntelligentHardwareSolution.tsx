@@ -1,5 +1,7 @@
+import { Link } from 'react-router-dom';
 import Layout from '../../components/Layout';
 import { useIntersectionFadeIn } from '../../hooks/useIntersectionFadeIn';
+import { ROUTES } from '../../constants/routes';
 import '../../styles/SoftwareSolution.css';
 import '../../styles/IntelligentHardwareSolution.css';
 
@@ -206,6 +208,9 @@ const IntelligentHardwareSolution = () => {
                   <p>
                     采用阵列麦克风设计，具备空间降噪和远场拾音能力，
                     支持360°全方位语音识别，适用于复杂环境。
+                    详见
+                    <Link to={ROUTES.microphoneArray}>语音识别拾音阵列</Link>
+                    产品规格。
                   </p>
                   <div className="sub-products">
                     <div className="sub-product-item">

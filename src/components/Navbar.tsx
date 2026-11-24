@@ -55,11 +55,11 @@ const Navbar = () => {
       title: '智能产品',
       path: ROUTES.products,
       subMenus: [
+        { title: '语音识别拾音阵列', path: ROUTES.microphoneArray },
         { title: '语音门锁', path: `${ROUTES.products}#voice-lock` },
         { title: '语音遥控器', path: `${ROUTES.products}#voice-remote` },
         { title: '语音风扇', path: `${ROUTES.products}#voice-fan` },
         { title: '语音面板', path: `${ROUTES.products}#voice-panel` },
-        { title: '智能拾音器', path: `${ROUTES.products}#smart-microphone` },
         { title: '语音智能体', path: `${ROUTES.products}#voice-agent` },
       ],
     },

@@ -54,6 +54,83 @@ const Home = () => {
           </div>
         </section>
 
+        <section className="promo-video-section" aria-label="语音交互应用演示">
+          <div className="container">
+            <div className="promo-video-inner">
+              <div className="promo-video-copy">
+                <p className="promo-video-eyebrow">PRODUCT DEMO</p>
+                <h2>语音交互应用演示</h2>
+                <p>
+                  得力智能交互地球仪实拍：唤醒后语音提问，球体点亮定位并播报地理知识——
+                  端侧离线语音识别在智能硬件上的真实落地。
+                </p>
+                <ul className="promo-video-points">
+                  <li>语音唤醒 · 开口即问</li>
+                  <li>点亮定位 · 球体高亮对应国家</li>
+                  <li>地理播报 · 首都、面积与概况</li>
+                </ul>
+                <Link to={ROUTES.intelligentHardwareSolution} className="btn btn-primary">
+                  了解硬件方案
+                </Link>
+              </div>
+              <div className="promo-video-media">
+                <video
+                  className="promo-video"
+                  src="/video/smart-globe-demo.mp4"
+                  poster="/video/smart-globe-demo-poster.jpg"
+                  controls
+                  playsInline
+                  preload="metadata"
+                  title="得力智能交互地球仪 · 语音操控演示"
+                >
+                  您的浏览器不支持视频播放
+                </video>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="mic-array-preview" aria-label="语音识别拾音阵列">
+          <div className="container">
+            <div className="mic-array-preview-inner">
+              <div className="mic-array-preview-copy">
+                <p className="mic-array-preview-eyebrow">AUDIO FRONT END</p>
+                <h2>语音识别拾音阵列</h2>
+                <p>
+                  面向高噪声语音识别与远场语音交互，提供环形六麦与线性四麦阵列模组，
+                  支持波束成型、AEC 回声消除与端侧语音识别。
+                </p>
+                <ul className="mic-array-preview-points">
+                  <li>环形六麦 · 360° 声源定位</li>
+                  <li>线性四麦 · 动态波束成型</li>
+                  <li>远场拾音 · 端侧语音识别</li>
+                </ul>
+                <Link to={ROUTES.microphoneArray} className="btn btn-primary">
+                  查看规格详情
+                </Link>
+              </div>
+              <Link to={ROUTES.microphoneArray} className="mic-array-preview-media">
+                <div className="mic-array-preview-shot mic-array-preview-shot--dark">
+                  <img
+                    src="/images/microphone-array/circular-6mic-hero.png"
+                    alt="环形六麦阵列模组"
+                    loading="lazy"
+                  />
+                  <span>环形六麦阵列</span>
+                </div>
+                <div className="mic-array-preview-shot mic-array-preview-shot--light">
+                  <img
+                    src="/images/microphone-array/linear-4mic-hero.png"
+                    alt="线性四麦阵列模组"
+                    loading="lazy"
+                  />
+                  <span>线性四麦阵列</span>
+                </div>
+              </Link>
+            </div>
+          </div>
+        </section>
+
         <section className="tech-section">
           <div className="container">
             <h2 className="section-title">核心技术能力</h2>

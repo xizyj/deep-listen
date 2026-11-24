@@ -1,11 +1,24 @@
+import { Link } from 'react-router-dom';
 import Layout from '../components/Layout';
 import { useIntersectionFadeIn } from '../hooks/useIntersectionFadeIn';
+import { ROUTES } from '../constants/routes';
 import '../styles/Products.css';
 
 const Products = () => {
   useIntersectionFadeIn({ visibleClass: 'visible' });
 
   const productCategories = [
+    {
+      id: 'smart-microphone',
+      title: '语音识别拾音阵列',
+      description:
+        '面向高噪声语音识别与远场语音交互，提供环形六麦与线性四麦阵列模组，支持波束成型、AEC 回声消除与端侧语音识别。',
+      features: ['环形六麦 / 线性四麦', '远场拾音', '波束成型', 'AEC 回声消除', '声源定位', '端侧语音识别'],
+      img: '/images/microphone-array/circular-6mic-hero.png',
+      detailPath: ROUTES.microphoneArray,
+      detailLabel: '查看规格',
+      imgContain: true,
+    },
     {
       id: 'voice-lock',
       title: '语音门锁',
@@ -35,13 +48,6 @@ const Products = () => {
       img: '/images/yuyinmianban.jpeg',
     },
     {
-      id: 'smart-microphone',
-      title: '智能拾音器',
-      description: '高性能智能拾音设备，集成AI语音处理算法，提供清晰的语音采集和处理功能，适用于多种场景。',
-      features: ['远场拾音', '噪音抑制', '回声消除', '声源定位', '定向拾音', '智能降噪'],
-      img: '/images/zhinengshiyinqi.jpeg',
-    },
-    {
       id: 'voice-agent',
       title: '语音智能体',
       description: '基于大语言模型和语音交互技术的智能体产品，提供自然对话、知识问答、任务处理等智能化服务。',
@@ -56,7 +62,7 @@ const Products = () => {
         <div className="page-header">
           <div className="container">
             <h1>智能产品</h1>
-            <p>语音门锁、遥控器、风扇、面板与拾音器等，覆盖家电与家居的离线语音控制需求</p>
+            <p>语音门锁、遥控器、风扇、面板与拾音阵列等，覆盖家电与家居的离线语音控制需求</p>
           </div>
         </div>
 
@@ -84,7 +90,7 @@ const Products = () => {
                 <p className="category-description">{category.description}</p>
 
                 <div className="product-overview">
-                  <div className="product-image">
+                  <div className={`product-image${category.imgContain ? ' product-image--contain' : ''}`}>
                     <img
                       src={category.img}
                       alt={category.title}
@@ -93,8 +99,9 @@ const Products = () => {
                       style={{
                         height: '300px',
                         width: '100%',
-                        objectFit: 'cover',
+                        objectFit: category.imgContain ? 'contain' : 'cover',
                         borderRadius: '8px',
+                        background: category.imgContain ? '#111' : undefined,
                       }}
                     />
                   </div>
@@ -107,6 +114,11 @@ const Products = () => {
                         ))}
                       </ul>
                     </div>
+                    {category.detailPath && (
+                      <Link to={category.detailPath} className="product-link">
+                        {category.detailLabel || '查看详情'}
+                      </Link>
+                    )}
                   </div>
                 </div>
               </div>
@@ -154,7 +166,7 @@ const Products = () => {
           <div className="container">
             <h2>联系我们</h2>
             <p>如有任何问题或需求，请联系我们的销售团队</p>
-            <a href="#" className="btn btn-primary">联系销售</a>
+            <Link to={ROUTES.contact} className="btn btn-primary">联系销售</Link>
           </div>
         </div>
       </div>

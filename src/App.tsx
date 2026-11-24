@@ -4,6 +4,7 @@ import './styles/global.css'
 import Home from './pages/Home'
 import IndustryApplications from './pages/IndustryApplications'
 import Products from './pages/Products'
+import MicrophoneArray from './pages/MicrophoneArray'
 import ResourceCenter from './pages/ResourceCenter'
 import Solutions from './pages/Solutions'
 import Contact from './pages/Contact'
@@ -36,6 +37,7 @@ function AppRoutes() {
       <Route path="/insights" element={<Insights />} />
       <Route path="/insights/:slug" element={<InsightDetail />} />
       <Route path="/products" element={<Products />} />
+      <Route path="/products/microphone-array" element={<MicrophoneArray />} />
       <Route path="/resource-center" element={<ResourceCenter />} />
       <Route path="/solutions" element={<Solutions />} />
       <Route path="/solutions/software-solution" element={<SoftwareSolution />} />
